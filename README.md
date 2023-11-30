@@ -4,27 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/lumina-design.svg)](https://www.npmjs.com/package/lumina-design) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
+## Documentation
 
-```bash
-npm install --save lumina-design
-```
-
-## Usage
-
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'lumina-design'
-import 'lumina-design/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
-```
+[View Documentation here (https://luminadesign.elysium-cloud.com)]
 
 ## License
 
-MIT © [](https://github.com/)
+MIT © [indrajeet-ambadekar](https://github.com/indrajeet-ambadekar)
