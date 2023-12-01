@@ -37,14 +37,10 @@ $button-seconday: #f9f9f9;
   justify-content: flex-end;
   align-items: center;
 }
-
-* {
-  // color: rgb(45, 44, 44);
-  box-sizing: border-box;
-}
-.lumina-providor{
+body{
   &::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
+    height: 6px;
   }
   
   /* Track */
@@ -67,7 +63,61 @@ $button-seconday: #f9f9f9;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     &::-webkit-scrollbar {
-      width: 4px;
+      width: 6px;
+      height: 6px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $lumina-orange; 
+      border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lumina-orange; 
+    }
+  }
+}
+* {
+  // color: rgb(45, 44, 44);
+  box-sizing: border-box;
+}
+.lumina-providor{
+  font-size: 14px;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $lumina-orange; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $lumina-orange; 
+  }
+  *{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
     }
     
     /* Track */
@@ -330,8 +380,9 @@ $button-seconday: #f9f9f9;
   border-radius: 12px;
   min-width: 40vw;
   max-width: 80vw;
+  max-height: 80vh;
   padding: 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .dialog-header {
@@ -345,18 +396,15 @@ $button-seconday: #f9f9f9;
 .dialog-footer {
   margin-bottom: 30px;
 }
-.dialog-body {
-  padding: 10px 20px;
-
-}
 .dialog-content-wrapper {
   line-height: 22px;
   font-size: inherit;
   padding: 0.5rem 1rem 1rem 1rem;
   & > div {
     margin-bottom: 1rem;
-    max-height: 70vh;
+    max-height: 50vh;
     overflow-y: auto;
+    padding: 0 1rem 0 0 ;
     &:last-child {
       margin-bottom: 0;
     }
@@ -364,21 +412,18 @@ $button-seconday: #f9f9f9;
 }
 
 .dialog-close-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  font-size: 18px;
+  @include vertical-center();
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 1;
   * {
     color: $white;
   }
   cursor: pointer;
   border: none;
   outline: none;
-  background: #000;
+  background: $lumina-orange;
   border-radius: 50%;
 }
 
@@ -552,6 +597,7 @@ $button-seconday: #f9f9f9;
   width: 24px;
   height: 24px;
   font-size: 12px;
+  @include vertical-center();
   i {
     font-size: 12px;
   }
@@ -560,40 +606,45 @@ $button-seconday: #f9f9f9;
   width: 32px;
   height: 32px;
   font-size: 14px;
+  @include vertical-center();
   i {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 .avatar-L {
   width: 40px;
   height: 40px;
   font-size: 16px;
+  @include vertical-center();
   i {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
 .avatar-XL {
   width: 44px;
   height: 44px;
   font-size: 22px;
+  @include vertical-center();
   i {
-    font-size: 44px;
+    font-size: 42px;
   }
 }
 .avatar-XXL {
   width: 64px;
   height: 64px;
   font-size: 32px;
+  @include vertical-center();
   i {
-    font-size: 64px;
+    font-size: 62px;
   }
 }
 .avatar-3XL {
   width: 80px;
   height: 80px;
   font-size: 40px;
+  @include vertical-center();
   i {
-    font-size: 80px;
+    font-size: 78px;
   }
 }
 
@@ -974,7 +1025,7 @@ $one-grid: calc(100% / 12);
   }
   &[type='primary'] {
     color: $white;
-    background-color: $button-primary;
+    background-color: $lumina-orange;
     * {
       color: $white;
     }
@@ -982,7 +1033,7 @@ $one-grid: calc(100% / 12);
     overflow: hidden;
     background-position: center;
     transition: background 0.8s;
-    background: $button-primary
+    background: $lumina-orange
       radial-gradient(circle, transparent 1%, #b11116 1%) center/15000%;
     &:active {
       background-size: 100%;
@@ -995,9 +1046,9 @@ $one-grid: calc(100% / 12);
     }
   }
   &[type='secondary'] {
-    color: $button-primary;
+    color: $lumina-orange;
     * {
-      color: $button-primary;
+      color: $lumina-orange;
     }
     background-color: $button-seconday;
     position: relative;
@@ -1019,9 +1070,9 @@ $one-grid: calc(100% / 12);
     border-radius: 6px;
   }
   &[type='text'] {
-    color: $button-primary;
+    color: $lumina-orange;
     * {
-      color: $button-primary;
+      color: $lumina-orange;
     }
     font-weight: 600;
   }
