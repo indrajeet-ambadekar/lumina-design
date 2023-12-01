@@ -1,12 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import styles from "../../styles/module.scss";
-import {
-  IconExclamationTriangle,
-  IconLightbulbAlt,
-  IconThumbsDownAlt,
-  IconThumbsUpAlt
-} from "../icons/icon-lib";
+
 const useTimeout = (callback, delay) => {
   const savedCallback = useRef(callback);
 
@@ -25,16 +20,26 @@ const useTimeout = (callback, delay) => {
     return () => clearTimeout(id);
   }, [delay]);
 };
-const toastTypeMap = {
-  default: null,
-  success: <IconThumbsUpAlt />,
-  error: <IconExclamationTriangle />,
-  warn: <IconExclamationTriangle />,
-  info: <IconLightbulbAlt />
-};
+
 export const Toast = (props) => {
   useTimeout(props.close, props.timer || 5000);
-
+  const toastTypeMap = {
+    default: null,
+    success: (
+      <i className={`far fa-thumbs-up ${styles["lumina-toast-icon"]}`} />
+    ),
+    error: (
+      <i
+        className={`fas fa-exclamation-triangle ${styles["lumina-toast-icon"]}`}
+      />
+    ),
+    warn: (
+      <i
+        className={`fas fa-exclamation-triangle ${styles["lumina-toast-icon"]}`}
+      />
+    ),
+    info: <i className={`fas fa-lightbulb ${styles["lumina-toast-icon"]}`} />
+  };
   return (
     <div
       className={[
