@@ -1,8 +1,16 @@
-import './index.scss'
+import "./index.scss";
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import {ToastProvider} from "lumina-design"
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { LuminaProvidor, ToastProvider } from "lumina-design";
+import "lumina-design/dist/index.css";
 
-ReactDOM.render(<ToastProvider><App /></ToastProvider>, document.getElementById('root'))
+ReactDOM.render(
+  <ToastProvider>
+    <LuminaProvidor>
+      <App />
+    </LuminaProvidor>
+  </ToastProvider>,
+  document.getElementById("root")
+);
