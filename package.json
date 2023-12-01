@@ -1,6 +1,6 @@
 {
   "name": "lumina-design",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Made with create-react-library",
   "author": "",
   "license": "MIT",
@@ -12,19 +12,19 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format modern,cjs --globals react-date-picker",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "watch": "onchange 'src/**/*.**' 'example/**/*.**' './package.json' 'README.md' -- prettier --write {{changed}}",
     "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "prebuild": "rimraf icon-src && rimraf icon-dist",
+    "build-icons": "npm run prebuild && npm run svgr && rollup -c && npm run copy-icons-build",
+    "copy-icons-build": "rimraf src/components/icons/icon-lib.js && mv icon-dist/icon-lib.js src/components/icons/icon-lib.js",
+    "svgr": "svgr --icon --title-prop --replace-attr-values '#292929bf=currentColor' -d icon-src -- icons-svg",
     "predeploy": "cd example && npm install && npm run build",
     "add_package_json": "cp -a ./config/* ./dist/ && cp -a README.md dist/.",
+    "deploy": "gh-pages -d example/build",
     "publish_package": "npm run build && npm run add_package_json && cd dist && npm publish && cd ../",
-    "deploy": "gh-pages -d example/build"
+    "custom-svgr": "rm -rf custom-icon-src/* && svgr --icon --title-prop --replace-attr-values '#292929bf=currentColor' -d custom-icon-src -- custom-icon-svg"
   },
   "peerDependencies": {
     "react": "^17.0.2",
@@ -34,6 +34,9 @@
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-unicode-property-regex": "^7.18.6",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@svgr/cli": "^7.0.0",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
@@ -50,11 +53,15 @@
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "prettier": "^2.8.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
-    "sass": "^1.69.5"
+    "prettier": "^2.8.7",
+    "react": "^17.0.2",
+    "react-date-picker": "^8.0.7",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "react-transition-group": "^4.4.1",
+    "rollup": "^1.32.1",
+    "rollup-plugin-filesize": "^10.0.0",
+    "sass": "^1.62.0"
   },
   "files": [
     "dist"

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./styles/index.scss";
-import styles from "./styles/module.scss"
+import styles from "./styles/module.scss";
 import Accordion from "./components/accordion";
 import AppHeader from "./components/appheader";
 import AutoComplete from "./components/autocomplete";
@@ -38,7 +38,7 @@ export const LuminaProvidor = ({ children }) => {
     imported.crossOrigin = "anonymous";
     document.head.appendChild(imported);
   }, []);
-  return <div className={[styles['lumina-providor'],'lumina-design-providor'].join(" ")}>{children}</div>;
+  return <div>{children}</div>;
 };
 
 export {
@@ -74,5 +74,5 @@ export {
   useToast,
   ToggleInput,
   ToggleSwitch,
-  Tooltip,
+  Tooltip
 };
