@@ -6,7 +6,7 @@
 
 ## Documentation
 
-[View Documentation here (https://luminadesign.elysium-cloud.com)]
+[View Documentation here (https://lumina-design.elysium-cloud.com)]
 
 ## License
 
