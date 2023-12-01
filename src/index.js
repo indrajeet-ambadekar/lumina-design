@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./styles/index.scss";
+import styles from "./styles/module.scss"
 import Accordion from "./components/accordion";
-import AppBar from "./components/appbar";
 import AppHeader from "./components/appheader";
 import AutoComplete from "./components/autocomplete";
 import Avatar from "./components/avatar";
@@ -38,12 +38,11 @@ export const LuminaProvidor = ({ children }) => {
     imported.crossOrigin = "anonymous";
     document.head.appendChild(imported);
   }, []);
-  return <div className='lumina-design-providor'>{children}</div>;
+  return <div className={[styles['lumina-providor'],'lumina-design-providor'].join(" ")}>{children}</div>;
 };
 
 export {
   Accordion,
-  AppBar,
   AppHeader,
   AutoComplete,
   Avatar,

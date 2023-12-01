@@ -314,7 +314,7 @@ export default ({ location, buttons, mainButtonIcon, menuIdentifier }) => {
               </Fragment>
             ))}
           </div>
-          {enable && isMenuIdentifier && (
+          {/* {enable && isMenuIdentifier && (
             <div
               className={`${styles["lumina-menu-identifier"]} ${className}`}
               style={{
@@ -338,7 +338,7 @@ export default ({ location, buttons, mainButtonIcon, menuIdentifier }) => {
                 {label}
               </span>
             </div>
-          )}
+          )} */}
         </>
       ) : (
         <div

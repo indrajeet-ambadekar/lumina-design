@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { LuminaProvidor,
   Accordion,
-  AppBar,
   AppHeader,
   AutoComplete,
   Avatar,
@@ -56,7 +55,7 @@ const floating_buttons = [
 ];
 const App = () => {
   const toast = useToast();
-
+  console.log(toast)
   const [showDialog, toggleDialog] = useState(false);
   const [switchFlag, toggleSwitchFlag] = useState(false);
   const [toggleFlag, toggleInputFlag] = useState(false);
@@ -130,10 +129,6 @@ const App = () => {
           >
             <section className='content-wrapper'>Accordion Text Area</section>
           </Accordion>
-        </section>
-        <section className='showcase-item'>
-          <Text type='h2'>Appbar Component</Text>
-          <AppBar></AppBar>
         </section>
         <section className='showcase-item'>
           <Text type='h2'>AppHeader Component</Text>
@@ -230,7 +225,7 @@ size--> S,M,L,XL,XXL,3XL
           `}</pre>
           <div className='flex-row'>
             <Avatar size='S' className='test'>
-              <i className='fas fa-user-circle' />
+              <i className='fas fa-user' />
             </Avatar>
             <Avatar size='S'>JD</Avatar>
             <Avatar size='M'>JD</Avatar>
@@ -623,11 +618,52 @@ xs-> extra small[1-12], sm-> small media[1-12], md-> media device[1-12], lg-> la
                 <Text type='h5'>Dialog Title</Text>
               </div>
               <div className='dialog-content'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate</p>
+
               </div>
               <div className='dialog-footer'>
                 <button

@@ -1,9 +1,10 @@
 @mixin Montserrat {
   font-family: 'Montserrat', sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 $red-carnelian: rgba(196, 49, 33, 0.75);
-$elysium-orange: rgba(234, 97, 83, 1);
+$lumina-orange: rgb(237, 81, 63);
 $blue-persian: #005e9e;
 $white: #ffffff;
 $gray-isabelline: #f2f0f0;
@@ -41,6 +42,52 @@ $button-seconday: #f9f9f9;
 * {
   // color: rgb(45, 44, 44);
   box-sizing: border-box;
+}
+.lumina-providor{
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $lumina-orange; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $lumina-orange; 
+  }
+  *{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $lumina-orange; 
+      border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lumina-orange; 
+    }
+  }
 }
 
 // ######################## TEXT STYLES ##############################
@@ -153,7 +200,7 @@ $button-seconday: #f9f9f9;
 ._acrdn-wrapper {
   margin: 1rem 0;
   @include card-shadow;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #fff;
 }
 ._acrdn-item {
@@ -252,6 +299,28 @@ $button-seconday: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
+  *{
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $lumina-orange; 
+      border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lumina-orange; 
+    }
+  }
 }
 
 .dialog {
@@ -263,7 +332,6 @@ $button-seconday: #f9f9f9;
   min-width: 40vw;
   max-width: 80vw;
   padding: 1rem;
-  max-height: 100vh;
   overflow-y: scroll;
 }
 
@@ -280,6 +348,7 @@ $button-seconday: #f9f9f9;
 }
 .dialog-body {
   padding: 10px 20px;
+
 }
 .dialog-content-wrapper {
   line-height: 22px;
@@ -287,6 +356,8 @@ $button-seconday: #f9f9f9;
   padding: 0.5rem 1rem 1rem 1rem;
   & > div {
     margin-bottom: 1rem;
+    max-height: 70vh;
+    overflow-y: auto;
     &:last-child {
       margin-bottom: 0;
     }
@@ -359,7 +430,7 @@ $button-seconday: #f9f9f9;
   overflow: hidden;
   cursor: pointer;
   border: 2px solid $gray-isabelline;
-  border-radius: 8px;
+  border-radius: 6px;
   margin: 0;
   &:focus {
     outline: none;
@@ -383,7 +454,7 @@ $button-seconday: #f9f9f9;
   display: block;
   width: 40px;
   margin: 5px;
-  background: $elysium-orange;
+  background: $lumina-orange;
   position: absolute;
   top: 2px;
   bottom: 2px;
@@ -419,7 +490,7 @@ $button-seconday: #f9f9f9;
     text-transform: uppercase;
     padding-left: 10px;
     background-color: $white;
-    color: $elysium-orange;
+    color: $lumina-orange;
     font-weight: 800;
   }
 }
@@ -436,7 +507,7 @@ $button-seconday: #f9f9f9;
   text-transform: uppercase;
   padding-right: 10px;
   background-color: $white;
-  color: $elysium-orange;
+  color: $lumina-orange;
   text-align: right;
 }
 
@@ -454,8 +525,8 @@ $button-seconday: #f9f9f9;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: $blue-alice;
-  color: $blue-bolt;
+  background-color: $lumina-orange;
+  color: $white;
   font-weight: 700;
   * {
     width: 100%;
@@ -468,7 +539,7 @@ $button-seconday: #f9f9f9;
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: $blue-bolt;
+    color: $white;
     height: 100%;
     font-size: inherit;
   }
@@ -483,7 +554,7 @@ $button-seconday: #f9f9f9;
   height: 24px;
   font-size: 12px;
   i {
-    font-size: 24px;
+    font-size: 12px;
   }
 }
 .avatar-M {
@@ -894,7 +965,7 @@ $one-grid: calc(100% / 12);
   }
 
   &[curve='rounded'] {
-    border-radius: 8px !important;
+    border-radius: 6px !important;
   }
   &[curve='curved'] {
     border-radius: 42px !important;
@@ -946,7 +1017,7 @@ $one-grid: calc(100% / 12);
         radial-gradient(circle, transparent 1%, $gray-light 1%) center/15000%;
     }
     border: 1px solid #e2e2e2;
-    border-radius: 8px;
+    border-radius: 6px;
   }
   &[type='text'] {
     color: $button-primary;
@@ -998,7 +1069,7 @@ $one-grid: calc(100% / 12);
   label {
     background-color: transparent;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -1023,8 +1094,8 @@ $one-grid: calc(100% / 12);
     visibility: hidden;
   }
   input[type='checkbox']:checked + label {
-    background-color: $elysium-orange;
-    border-color: $elysium-orange;
+    background-color: $lumina-orange;
+    border-color: $lumina-orange;
   }
   input[type='checkbox']:checked + label:after {
     opacity: 1;
@@ -1101,14 +1172,14 @@ $one-grid: calc(100% / 12);
 // ######################## LINK STYLES ##############################
 
 a.lumina-link {
-  color: $elysium-orange;
+  color: $lumina-orange;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   padding: 3px 0;
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 2px solid $elysium-orange;
+    border-bottom: 2px solid $lumina-orange;
   }
   @include Montserrat;
   font-size: inherit;
@@ -1142,7 +1213,7 @@ a.lumina-link-disabled {
 .lumina-input-wrapper {
   border: 1px solid $gray-light;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-top: 40px;
   box-sizing: border-box;
   position: relative;
@@ -1235,7 +1306,7 @@ a.lumina-link-disabled {
   & > div {
     background-color: #fff;
     border: 1px solid $gray-light;
-    border-radius: 5px;
+    border-radius: 6px;
     margin-top: 40px;
     box-sizing: border-box;
     position: relative;
@@ -1261,8 +1332,17 @@ a.lumina-link-disabled {
         }
       }
     }
+    button{
+      padding:0;
+      i{
+        font-size: 1.2rem;
+        color: $lumina-orange;
+      }
+    }
   }
+  
 }
+
 
 // ######################## TOGGLE INPUT STYLES ##############################
 
@@ -1438,8 +1518,8 @@ a.lumina-link-disabled {
     position: absolute;
     width: 14px;
     height: 14px;
-    background-color: $elysium-orange;
-    border: 2px solid $elysium-orange;
+    background-color: $lumina-orange;
+    border: 2px solid $lumina-orange;
     border-radius: 50%;
     top: 50%;
     left: -5px;
@@ -1448,7 +1528,7 @@ a.lumina-link-disabled {
   }
 
   input[type='radio']:checked + label::before {
-    border-color: $elysium-orange;
+    border-color: $lumina-orange;
   }
 
   input[type='radio']:checked + label::after {
@@ -1515,7 +1595,7 @@ a.lumina-link-disabled {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.32px;
-    color: $elysium-orange;
+    color: $lumina-orange;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -1566,7 +1646,7 @@ a.lumina-link-disabled {
   background-color: $white;
 }
 .lumina-chip-orange {
-  background-color: $elysium-orange;
+  background-color: $lumina-orange;
   * {
     color: $white;
   }
@@ -1609,7 +1689,7 @@ a.lumina-link-disabled {
   font-size: 14px;
 }
 .lumina-flbtn-orange {
-  background-color: $elysium-orange;
+  background-color: $lumina-orange;
   * {
     color: $white;
     font-family: 'Montserrat';
@@ -1665,7 +1745,7 @@ a.lumina-link-disabled {
 }
 
 .circle-progress {
-  stroke: $elysium-orange;
+  stroke: $lumina-orange;
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: all 0.8s ease-in 0s;
@@ -1681,7 +1761,7 @@ a.lumina-link-disabled {
   @include Montserrat;
   font-size: 12px;
   font-weight: 500;
-  fill: $elysium-orange;
+  fill: $lumina-orange;
 }
 .circle-text-complete {
   @include Montserrat;
@@ -1721,7 +1801,7 @@ a.lumina-link-disabled {
 }
 .lumina-prgs-lnr-fill {
   border-radius: 22px;
-  background-color: $elysium-orange;
+  background-color: $lumina-orange;
   transition: width 0.8s ease-in 0s;
 }
 .lumina-prgs-lnr-fill-complete {
@@ -1741,7 +1821,7 @@ a.lumina-link-disabled {
 }
 .lumina-progress-status-red {
   i {
-    color: $elysium-orange;
+    color: $lumina-orange;
     font-size: 20px;
   }
 }
@@ -1778,7 +1858,7 @@ a.lumina-link-disabled {
 
 .lumina-range-slider::-webkit-slider-thumb {
   -webkit-appearance: none !important;
-  background-color: $elysium-orange;
+  background-color: $lumina-orange;
   border: 1px solid $red-carnelian;
   height: 24px;
   width: 24px;
@@ -1858,14 +1938,14 @@ a.lumina-link-disabled {
   color: $gray-old-silver;
   border: 1px solid transparent;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
   margin-right: 10px;
   background-color: $gray-isabelline;
 }
 .lumina-active-tab-chip {
-  border-bottom: 3px solid $elysium-orange;
+  border-bottom: 3px solid $lumina-orange;
   * {
-    color: $elysium-orange;
+    color: $lumina-orange;
   }
   flex: none;
   order: 0;
@@ -1874,9 +1954,9 @@ a.lumina-link-disabled {
   font-weight: 700;
 }
 .lumina-active-contained-tab-chip {
-  border: 1px solid $elysium-orange;
+  border: 1px solid $lumina-orange;
   * {
-    color: $elysium-orange;
+    color: $lumina-orange;
   }
   flex: none;
   order: 0;
@@ -1942,11 +2022,11 @@ a.lumina-link-disabled {
 }
 .lumina-tag-error {
   background-color: #ffe5e5;
-  color: $elysium-orange;
+  color: $lumina-orange;
 }
 .lumina-tag-error-dark {
   color: #fff;
-  background-color: $elysium-orange;
+  background-color: $lumina-orange;
 }
 .lumina-tag-warn,
 .lumina-tag-pending {
@@ -2077,10 +2157,10 @@ a.lumina-link-disabled {
       width: 48%;
       &:first-child {
         background-color: #fff;
-        color: $elysium-orange;
+        color: $lumina-orange;
       }
       &:last-child {
-        background-color: $elysium-orange;
+        background-color: $lumina-orange;
         color: #fff;
         margin-left: 10px;
       }
@@ -2122,11 +2202,11 @@ a.lumina-link-disabled {
   border-bottom: 3px solid transparent;
 }
 .lumina-nav-item-active {
-  border-bottom-color: $elysium-orange;
+  border-bottom-color: $lumina-orange;
   font-weight: 800;
   i,
   span {
-    color: $elysium-orange;
+    color: $lumina-orange;
   }
 }
 .lumina-nav-item-icon {
@@ -2148,7 +2228,7 @@ a.lumina-link-disabled {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: $elysium-orange;
+  background-color: $lumina-orange;
   border: 4px solid transparent;
   @include vertical-center();
   text-align: center;
@@ -2183,7 +2263,7 @@ a.lumina-link-disabled {
 .lumina-toast {
   border: 1px solid #ccc;
   background-color: #fafafa;
-  border-radius: 8px;
+  border-radius: 6px;
   -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.22);
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.22);
@@ -2355,7 +2435,7 @@ a.lumina-link-disabled {
 .lumina-tab-select-option {
   border: none; //1px solid $black-raisin;
   @include card-shadow();
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0.5rem 1rem;
   margin: 10px 10px 10px 0;
   @include vertical-center();
@@ -2367,7 +2447,7 @@ a.lumina-link-disabled {
   color: $black-raisin;
 }
 .lumina-tab-select-option-selected {
-  background-color: $elysium-orange;
+  background-color: $lumina-orange;
   color: $white;
   svg {
     path {
@@ -2486,7 +2566,7 @@ a.lumina-link-disabled {
 .lumina-auto-complete-input-cntnr {
   height: 50px;
   border: 1px solid $gray-light;
-  border-radius: 4px;
+  border-radius: 6px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -2526,7 +2606,8 @@ a.lumina-link-disabled {
   overflow-x: hidden;
   overflow-y: auto;
   padding: 5px;
-  border-radius: 4px;
+  border-radius: 6px;
+  z-index: 5;
 }
 .lumina-auto-complete-suggested-row {
   height: 40px;
@@ -2584,7 +2665,7 @@ a.lumina-link-disabled {
 
     &.main-button {
       z-index: 20;
-      background-color: #ea6153;
+      background-color: $lumina-orange;
       color: #fff;
     }
 
