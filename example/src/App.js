@@ -34,21 +34,22 @@ import {
   ToggleSwitch,
   Tooltip
 } from "lumina-design";
+import { LuminaIcon } from "lumina-design-icons";
 const floating_buttons = [
   {
-    icon: <i className='fas fa-home' />,
+    icon: <LuminaIcon name='home' size={20} />,
     click: () => console.log("clicked")
   },
   {
-    icon: <i className='fas fa-briefcase' />,
+    icon: <LuminaIcon name='briefcase' size={20} />,
     click: () => console.log("clicked")
   },
   {
-    icon: <i className='fas fa-phone' />,
+    icon: <LuminaIcon name='mobile-android' size={20} />,
     click: () => console.log("clicked")
   },
   {
-    icon: <i className='fas fa-mobile-alt' />,
+    icon: <LuminaIcon name='phone' size={20} />,
     click: () => console.log("clicked")
   }
 ];
@@ -85,22 +86,22 @@ const App = () => {
           menuIdentifier={{ enable: true }}
           location='top-left'
           buttons={floating_buttons}
-          mainButtonIcon={<i className='fas fa-info' />}
+          mainButtonIcon={<LuminaIcon name='info' size={20} />}
         />
         <FloatingMenu
           location='top-right'
           buttons={floating_buttons}
-          mainButtonIcon={<i className='fas fa-info' />}
+          mainButtonIcon={<LuminaIcon name='info' size={20} />}
         />
         <FloatingMenu
           location='bottom-left'
           buttons={floating_buttons}
-          mainButtonIcon={<i className='fas fa-info' />}
+          mainButtonIcon={<LuminaIcon name='info' size={20} />}
         />
         <FloatingMenu
           location='bottom-right'
           buttons={floating_buttons}
-          mainButtonIcon={<i className='fas fa-info' />}
+          mainButtonIcon={<LuminaIcon name='info' size={20} />}
         />
       </section>
       <section className='showcase-item'>
@@ -108,8 +109,8 @@ const App = () => {
         <pre>{`
 <Accordion
   title={<div className='accordion-heading'>Accordion Component</div>}
-  openIcon={<i className='fas fa-chevron-down' />}
-  collapseIcon={<i className='fas fa-chevron-up' />}
+  openIcon={<LuminaIcon name='chevron-down' size={20} />}
+  collapseIcon={<LuminaIcon name='chevron-up' size={20} />}
   className='demo-card-accordion'
   defaultOpen={false}
   id='accordion1'
@@ -119,8 +120,8 @@ const App = () => {
           `}</pre>
         <Accordion
           title={<div className='accordion-heading'>Accordion Component</div>}
-          openIcon={<i className='fas fa-chevron-down' />}
-          collapseIcon={<i className='fas fa-chevron-up' />}
+          openIcon={<LuminaIcon name='chevron-down' size={24} />}
+          collapseIcon={<LuminaIcon name='chevron-up' size={24} />}
           className='demo-card-accordion'
           defaultOpen={false}
           id='accordion1'
@@ -141,7 +142,7 @@ const App = () => {
   }}
   profileIcon={
     <Avatar size='M'>
-      <i className='fas fa-user-circle'></i>
+      <LuminaIcon name='user' size={20} />
     </Avatar>
   }
 >
@@ -159,7 +160,7 @@ const App = () => {
           }}
           profileIcon={
             <Avatar size='M'>
-              <i className='fas fa-user-circle'></i>
+              <LuminaIcon name='user' size={20} />
             </Avatar>
           }
         >
@@ -223,7 +224,7 @@ size--> S,M,L,XL,XXL,3XL
           `}</pre>
         <div className='flex-row'>
           <Avatar size='S' className='test'>
-            <i className='fas fa-user' />
+            <LuminaIcon name='user' size={12} />
           </Avatar>
           <Avatar size='S'>JD</Avatar>
           <Avatar size='M'>JD</Avatar>
@@ -245,7 +246,7 @@ size--> S,M,L,XL,XXL,3XL
   >
     Page 1
   </BottomNavItem>
-  <BottomNavItem icon={<i className='fas fa-shield-virus' />}>
+  <BottomNavItem icon={<LuminaIcon name='shield' size={24} />}>
     Page 2
   </BottomNavItem>
   <BottomNavItem type='center' icon={<i className='fas fa-plus' />}>
@@ -262,21 +263,24 @@ size--> S,M,L,XL,XXL,3XL
         <BottomNavigation className='bottom-nav-demo'>
           <BottomNavItem
             active={true}
-            icon={<i className='fas fa-user' />}
+            icon={<LuminaIcon name='user' size={16} />}
             onClick={() => alert("TESTING")}
           >
             Page 1
           </BottomNavItem>
-          <BottomNavItem icon={<i className='fas fa-shield-virus' />}>
+          <BottomNavItem icon={<LuminaIcon name='shield' size={16} />}>
             Page 2
           </BottomNavItem>
-          <BottomNavItem type='center' icon={<i className='fas fa-plus' />}>
+          <BottomNavItem
+            type='center'
+            icon={<LuminaIcon name='plus' size={30} />}
+          >
             Page 3
           </BottomNavItem>
-          <BottomNavItem icon={<i className='fas fa-hamburger' />}>
+          <BottomNavItem icon={<LuminaIcon name='kayak' size={16} />}>
             Page 4
           </BottomNavItem>
-          <BottomNavItem icon={<i className='fas fa-truck' />}>
+          <BottomNavItem icon={<LuminaIcon name='truck' size={16} />}>
             Page 5
           </BottomNavItem>
         </BottomNavigation>
@@ -383,7 +387,7 @@ type-->        'primary','secondary','text'
             curve='rounded'
             disabled={false}
             buttonsize='M'
-            icon={<i className='fas fa-plus' />}
+            icon={<LuminaIcon name='plus' size={16} />}
           >
             Primary button
           </Button>
@@ -709,13 +713,13 @@ size-->  'S','M'
 `}
         </pre>
         <FloatingButton
-          icon={<i className='fas fa-plus' />}
+          icon={<LuminaIcon size={14} name='plus' />}
           onClick={() => console.log("button 1 clicked")}
           color='orange'
           size='S'
         />
         <FloatingButton
-          icon={<i className='fas fa-times' />}
+          icon={<LuminaIcon size={14} name='times' />}
           onClick={() => console.log("button 2 clicked")}
           color='white'
           size='M'
@@ -766,7 +770,7 @@ type--> 'text','number','mobile'
           onChange={(val) => setNumValue(val)}
           className='num-field'
           label='Income'
-          iconLeft={<i className='fas fa-user' />}
+          iconLeft={<LuminaIcon size={14} name='user' />}
         />
         <InputField
           type='mobile'
@@ -855,7 +859,7 @@ alignMenu--> 'left','right'
         <MenuDropdown
           label={
             <span>
-              <i className='fas fa-list' /> Simple Menu
+              <LuminaIcon size={20} name='list' /> Simple Menu
             </span>
           }
           alignMenu='left'
@@ -1398,7 +1402,7 @@ toast.warn("MESSAGE",time_in_milliseconds)
               <div className='flex-row'>
                 <button>I am not Sure</button>
                 <button>
-                  Know more <i className='fas fa-arrow-right' />
+                  Know more <LuminaIcon name='arrow-right' size={20} />
                 </button>
               </div>
             </div>

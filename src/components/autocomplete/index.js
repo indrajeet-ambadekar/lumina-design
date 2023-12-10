@@ -71,6 +71,7 @@ export default ({ ...props }) => {
             ].join(" ")}
             onClick={() => {
               setInputValue("");
+              setSuggested([]);
             }}
           >
             &times;

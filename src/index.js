@@ -32,13 +32,13 @@ import ToggleSwitch from "./components/toggleswitch";
 import Tooltip from "./components/tooltip";
 
 export const LuminaProvidor = ({ children }) => {
-  useEffect(() => {
-    var imported = document.createElement("script");
-    imported.src = "https://kit.fontawesome.com/c8ad5d74ba.js";
-    imported.crossOrigin = "anonymous";
-    document.head.appendChild(imported);
-  }, []);
-  return <div>{children}</div>;
+  // useEffect(() => {
+  //   var imported = document.createElement("script");
+  //   imported.src = "https://kit.fontawesome.com/c8ad5d74ba.js";
+  //   imported.crossOrigin = "anonymous";
+  //   document.head.appendChild(imported);
+  // }, []);
+  return <div className="lumina-design-wrapper">{children}</div>;
 };
 
 export {

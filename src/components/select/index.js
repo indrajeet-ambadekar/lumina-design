@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/module.scss";
 import { isType } from "../../utils";
+import { LuminaIcon } from "lumina-design-icons";
 export default ({ ...props }) => {
   let { name, className, id, onChange, label, children, value } = props;
   if (props === undefined) {
@@ -84,14 +85,22 @@ export default ({ ...props }) => {
           onClick={toggleDropdown}
         >
           {displayValue}
-          <i
+          {/* <i
             className={[
               `fa`,
               `fa-chevron-down`,
               `${styles["lumina-dropdown-icon"]}`,
               `${isOpen ? styles["lumina-dropdown-icon-open"] : ""}`
             ].join(" ")}
-          ></i>
+          ></i> */}
+          <LuminaIcon
+            name='chevron-down'
+            size={18}
+            className={[
+              `${styles["lumina-dropdown-icon"]}`,
+              `${isOpen ? styles["lumina-dropdown-icon-open"] : ""}`
+            ].join(" ")}
+          />
         </div>
         <div
           className={[

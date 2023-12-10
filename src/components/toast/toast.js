@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import styles from "../../styles/module.scss";
+import { LuminaIcon } from "lumina-design-icons";
 
 const useTimeout = (callback, delay) => {
   const savedCallback = useRef(callback);
@@ -26,19 +27,33 @@ export const Toast = (props) => {
   const toastTypeMap = {
     default: null,
     success: (
-      <i className={`far fa-thumbs-up ${styles["lumina-toast-icon"]}`} />
+      <LuminaIcon
+        size={18}
+        name='thumbs-up'
+        className={`${styles["lumina-toast-icon"]}`}
+      />
     ),
     error: (
-      <i
-        className={`fas fa-exclamation-triangle ${styles["lumina-toast-icon"]}`}
+      <LuminaIcon
+        size={18}
+        name='exclamation-triangle'
+        className={`${styles["lumina-toast-icon"]}`}
       />
     ),
     warn: (
-      <i
-        className={`fas fa-exclamation-triangle ${styles["lumina-toast-icon"]}`}
+      <LuminaIcon
+        size={18}
+        name='exclamation-triangle'
+        className={`${styles["lumina-toast-icon"]}`}
       />
     ),
-    info: <i className={`fas fa-lightbulb ${styles["lumina-toast-icon"]}`} />
+    info: (
+      <LuminaIcon
+        size={18}
+        name='lightbulb-alt'
+        className={`${styles["lumina-toast-icon"]}`}
+      />
+    )
   };
   return (
     <div
@@ -65,7 +80,7 @@ export const Toast = (props) => {
             "lumina-toast__close-btn"
           ].join(" ")}
         >
-          <i className='fas fa-times-circle' />
+          &times;
         </button>
       </div>
     </div>

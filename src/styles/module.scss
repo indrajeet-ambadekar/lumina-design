@@ -417,9 +417,8 @@ body {
   height: 26px;
   font-size: 14px;
   font-weight: 700;
-  * {
-    color: $white;
-  }
+  color: $white;
+  font-size: 20px;
   cursor: pointer;
   border: none;
   outline: none;
@@ -586,6 +585,11 @@ body {
     color: $white;
     height: 100%;
     font-size: inherit;
+  }
+  svg {
+    path {
+      stroke: $white;
+    }
   }
   img {
     width: 100%;
@@ -1028,6 +1032,11 @@ $one-grid: calc(100% / 12);
     background-color: $lumina-orange;
     * {
       color: $white;
+    }
+    svg {
+      path {
+        stroke: $white;
+      }
     }
     position: relative;
     overflow: hidden;
@@ -1650,11 +1659,11 @@ a.lumina-link-disabled {
   }
 }
 .lumina-breadcrumb-chevron {
-  i {
-    color: $gray-light;
-    font-size: 12px;
-    margin-left: 10px;
-    margin-top: -5px;
+  margin-left: 10px;
+  svg {
+    path {
+      stroke: $blue-persian;
+    }
   }
 }
 
@@ -1745,6 +1754,11 @@ a.lumina-link-disabled {
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
+  }
+  svg {
+    path {
+      stroke: $white;
+    }
   }
 }
 .lumina-flbtn-white {
@@ -1872,11 +1886,21 @@ a.lumina-link-disabled {
     color: $lumina-orange;
     font-size: 20px;
   }
+  svg {
+    path {
+      stroke: $lumina-orange;
+    }
+  }
 }
 .lumina-progress-status-green {
   i {
     color: $green;
     font-size: 20px;
+  }
+  svg {
+    path {
+      stroke: $green;
+    }
   }
 }
 
@@ -2262,11 +2286,11 @@ a.lumina-link-disabled {
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
-  line-height: 14px;
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
-  margin: 5px;
+  // line-height: 14px;
+  // font-size: 20px;
+  // width: 20px;
+  // height: 20px;
+  // margin: 5px;
   * {
     color: $gray-old-silver;
   }
@@ -2308,7 +2332,6 @@ a.lumina-link-disabled {
   z-index: 5000;
 }
 .lumina-toast-icon {
-  font-size: 16px;
 }
 .lumina-toast {
   border: 1px solid #ccc;
@@ -2389,7 +2412,7 @@ a.lumina-link-disabled {
 .lumina-toast__close-btn {
   border: none;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 25px;
   margin-right: 8px;
   cursor: pointer;
 }
@@ -2710,20 +2733,29 @@ a.lumina-link-disabled {
     cursor: pointer;
     min-width: 40px;
     min-height: 40px;
-    padding: 13px;
+    padding: 0px;
     position: absolute;
     opacity: 0.9;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    svg {
+      path {
+        stroke: #fff;
+      }
+    }
     &.main-button {
       z-index: 20;
       background-color: $lumina-orange;
-      color: #fff;
+      color: $white;
     }
 
     &.sub-button {
       opacity: 0;
       background-color: $blue-persian;
       color: #ffffff;
+      border: 2px solid $white;
     }
   }
 }

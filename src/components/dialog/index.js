@@ -49,7 +49,7 @@ export default ({ open, hide, ...props }) => {
                     aria-label='Close'
                     onClick={hide}
                   >
-                    <i className="fas fa-times"/>
+                    &times;
                   </button>
                 </div>
               )}

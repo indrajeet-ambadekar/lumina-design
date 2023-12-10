@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/module.scss";
-
+import { LuminaIcon } from "lumina-design-icons";
 export default ({ ...props }) => {
   const [menuOpen, toggleMenu] = useState(false);
   const _handleLogoClick = () => {
@@ -49,7 +49,8 @@ export default ({ ...props }) => {
               toggleMenu(!menuOpen);
             }}
           >
-            <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`} />
+            {/* <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`} /> */}
+            <LuminaIcon name={menuOpen ? "times" : "bars"} size={20} />
           </button>
         )}
         {props.logo && (

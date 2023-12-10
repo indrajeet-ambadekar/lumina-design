@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import styles from "../../styles/module.scss";
+import { LuminaIcon } from "lumina-design-icons";
 export default ({ ...props }) => {
   let {
     className,
@@ -50,7 +51,7 @@ export default ({ ...props }) => {
               styles["lumina-progress-status-green"]
             ].join(" ")}
           >
-            <i className='fas fa-check' />
+            <LuminaIcon size={14} name='check' />
           </div>
         )}
         {error && (
@@ -60,7 +61,7 @@ export default ({ ...props }) => {
               styles["lumina-progress-status-red"]
             ].join(" ")}
           >
-            <i className='fas fa-exclamation' />
+            <LuminaIcon size={14} name='exclamation-triangle' />
           </div>
         )}
       </div>
@@ -118,9 +119,9 @@ class CircularProgressBar extends React.Component {
         ? `${_percentage}%`
         : `${this.props.value}/${this.props.total}`;
     } else if (!this.props.success && this.props.error) {
-      return ""; //<i className='fas fa-exclamation'></i>;
+      return "";
     } else if (this.props.success && !this.props.error) {
-      return ""; //<i className='fas fa-check'></i>;
+      return "";
     }
   };
   render() {
