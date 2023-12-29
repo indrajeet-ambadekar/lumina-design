@@ -976,8 +976,7 @@ error--> true / false [boolean]
               mode='linear'
               total={100}
               value={90}
-              label={null}
-              // label={<span>Loading assets</span>}
+              label={<span>Loading assets</span>}
               strokeWidth={5}
             ></Progress>
           </div>

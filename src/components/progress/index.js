@@ -70,7 +70,7 @@ export default ({ ...props }) => {
     if (Number(size) < 40) {
       throw new Error(`Linear Progress Indicator needs a minimum size of '5'`);
     }
-    let _percentage = (Number(value) / Number(total)) * 100;
+    let _percentage = formatNumber((Number(value) / Number(total)) * 100);
     return (
       <div
         className={[
@@ -189,3 +189,12 @@ CircularProgressBar.defaultProps = {
   percentage: 25,
   strokeWidth: 5
 };
+
+function formatNumber(number) {
+  if (Number.isInteger(number)) {
+    return number; // Return integer as is
+  } else {
+    // Round to 2 decimal places for decimal numbers
+    return Math.round(number * 100) / 100;
+  }
+}
