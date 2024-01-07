@@ -253,9 +253,11 @@ export default ({ ...props }) => {
             ref={ref}
             onMouseEnter={!isHasTouch ? mouseEnterHandler : () => {}}
             onMouseLeave={!isHasTouch ? mouseLeaveHandler : () => {}}
-            className={[styles["lumina-toggle-nav"], "lumina-toggle-nav"].join(
-              " "
-            )}
+            className={[
+              styles["lumina-toggle-nav"],
+              "lumina-toggle-nav",
+              className || ""
+            ].join(" ")}
             style={{
               ...container,
               width: isHover ? navigatorDimensions : 40,
