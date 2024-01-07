@@ -41,13 +41,10 @@ const useTouchScreenDetect = () => {
   return isTouchScreen;
 };
 
-export default ({ location, buttons, mainButtonIcon, menuIdentifier }) => {
-  const {
-      enable = false,
-      icon,
-      label = "Menu",
-      className = ""
-    } = menuIdentifier ?? {},
+export default ({ ...props }) => {
+  const { location, buttons, mainButtonIcon, menuIdentifier, className } =
+    props;
+  const { enable = false, icon, label = "Menu" } = menuIdentifier ?? {},
     [isHover, setIsHover] = useState(false),
     [isMenuIdentifier, setIsMenuIdentifier] = useState(true),
     isHasTouch = useTouchScreenDetect(),

@@ -55,7 +55,6 @@ const floating_buttons = [
 ];
 const App = () => {
   const toast = useToast();
-  console.log(toast);
   const [showDialog, toggleDialog] = useState(false);
   const [switchFlag, toggleSwitchFlag] = useState(false);
   const [toggleFlag, toggleInputFlag] = useState(false);
@@ -87,6 +86,7 @@ const App = () => {
           location='top-left'
           buttons={floating_buttons}
           mainButtonIcon={<LuminaIcon name='info' size={20} />}
+          className='hello-world'
         />
         <FloatingMenu
           location='top-right'
