@@ -3,26 +3,32 @@ import styles from "../../styles/module.scss";
 import { LuminaIcon } from "lumina-design-icons";
 export default ({ ...props }) => {
   const [menuOpen, toggleMenu] = useState(false);
+
   const _handleLogoClick = () => {
     if (typeof props.onIconClick === "function") {
       props.onIconClick();
     }
   };
+
   useEffect(() => {
     const pageClickEvent = (e) => {
-      // If the active element exists and is clicked outside of
-      //
+      e.preventDefault();
       if (!e.target.closest(".lumina-header-hamburger-btn")) {
-        toggleMenu(!menuOpen);
+        // toggleMenu(false);
       }
     };
+
     if (menuOpen) {
       window.addEventListener("click", pageClickEvent);
     }
+
     return () => {
       window.removeEventListener("click", pageClickEvent);
     };
   }, [menuOpen]);
+  const _handleClick = () => {
+    toggleMenu(!menuOpen);
+  };
   return (
     <div
       className={[
@@ -45,9 +51,7 @@ export default ({ ...props }) => {
               styles["lumina-header-hamburger-btn"],
               "lumina-header-hamburger-btn"
             ].join(" ")}
-            onClick={() => {
-              toggleMenu(!menuOpen);
-            }}
+            onClick={_handleClick}
           >
             {/* <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`} /> */}
             <LuminaIcon name={menuOpen ? "times" : "bars"} size={20} />

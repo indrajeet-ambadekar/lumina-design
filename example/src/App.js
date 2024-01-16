@@ -165,6 +165,12 @@ const App = () => {
           }
         >
           <h1>APP HEADER</h1>
+          <h1>APP HEADER</h1>
+          <h1>APP HEADER</h1>
+          <h1>APP HEADER</h1>
+          <h1>APP HEADER</h1>
+          <h1>APP HEADER</h1>
+          <h1>APP HEADER</h1>
         </AppHeader>
       </section>
       <section className='showcase-item'>
