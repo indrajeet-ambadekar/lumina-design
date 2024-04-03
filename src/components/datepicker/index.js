@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-date-picker";
 import styles from "../../styles/module.scss";
-import { LuminaIcon } from "lumina-design-icons";
+import CalendarAltIcon from "../../assets/icons/CalendarAlt.js";
 export default ({ ...props }) => {
   var {
     onChange,
@@ -55,7 +55,16 @@ export default ({ ...props }) => {
         value={value || null}
         clearIcon={null}
         calendarIcon={
-          calendarIcon || <LuminaIcon name='calendar-alt' size={20} />
+          calendarIcon || (
+            <span
+              className={[
+                styles["lumina-date-input-calendar-icon"],
+                `${props?.iconClassName || ""}`
+              ].join(" ")}
+            >
+              <CalendarAltIcon />
+            </span>
+          )
         }
         className={[styles["lumina-date-field"], "lumina-date-field"].join(" ")}
         format='d/MM/yyyy'

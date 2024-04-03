@@ -1,8 +1,9 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import styles from "../../styles/module.scss";
-import { LuminaIcon } from "lumina-design-icons";
-
+import ExclamationTriangleIcon from "../../assets/icons/ExclamationTriangle.js";
+import ThumbsUpIcon from "../../assets/icons/ThumbsUp.js";
+import LightbulbAlt from "../../assets/icons/LightbulbAlt.js";
 const useTimeout = (callback, delay) => {
   const savedCallback = useRef(callback);
 
@@ -27,32 +28,24 @@ export const Toast = (props) => {
   const toastTypeMap = {
     default: null,
     success: (
-      <LuminaIcon
-        size={18}
-        name='thumbs-up'
-        className={`${styles["lumina-toast-icon"]}`}
-      />
+      <span className={`${styles["lumina-toast-icon"]}`}>
+        <ThumbsUpIcon />
+      </span>
     ),
     error: (
-      <LuminaIcon
-        size={18}
-        name='exclamation-triangle'
-        className={`${styles["lumina-toast-icon"]}`}
-      />
+      <span className={`${styles["lumina-toast-icon"]}`}>
+        <ExclamationTriangleIcon />
+      </span>
     ),
     warn: (
-      <LuminaIcon
-        size={18}
-        name='exclamation-triangle'
-        className={`${styles["lumina-toast-icon"]}`}
-      />
+      <span className={`${styles["lumina-toast-icon"]}`}>
+        <ExclamationTriangleIcon />
+      </span>
     ),
     info: (
-      <LuminaIcon
-        size={18}
-        name='lightbulb-alt'
-        className={`${styles["lumina-toast-icon"]}`}
-      />
+      <span className={`${styles["lumina-toast-icon"]}`}>
+        <LightbulbAlt />
+      </span>
     )
   };
   return (

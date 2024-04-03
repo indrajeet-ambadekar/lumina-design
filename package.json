@@ -1,6 +1,6 @@
 {
   "name": "lumina-design",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Made with create-react-library",
   "author": "",
   "license": "MIT",
@@ -12,7 +12,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs --globals react-date-picker",
+    "build": "microbundle-crl --no-compress --format modern,cjs --globals react-date-picker && npm run minify-index && npm run uglify-index",
+    "minify-index": "terser dist/index.js --compress --mangle --output dist/index.js",
+    "uglify-index": "uglifyjs dist/index.js --compress --mangle --output dist/index.js",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "watch": "onchange 'src/**/*.**' 'example/**/*.**' './package.json' 'README.md' -- prettier --write {{changed}}",
     "prepare": "run-s build",
@@ -50,7 +52,6 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
-    "lumina-design-icons": "^0.0.3",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
@@ -62,7 +63,9 @@
     "react-transition-group": "^4.4.1",
     "rollup": "^1.32.1",
     "rollup-plugin-filesize": "^10.0.0",
-    "sass": "^1.62.0"
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.62.0",
+    "uglify-js": "^3.17.4"
   },
   "files": [
     "dist"

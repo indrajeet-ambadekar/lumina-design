@@ -1400,6 +1400,12 @@ a.lumina-link-disabled {
     }
   }
 }
+.lumina-date-input-calendar-icon {
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 
 // ######################## TOGGLE INPUT STYLES ##############################
 
@@ -1531,6 +1537,10 @@ a.lumina-link-disabled {
   color: #91a5be;
   transform: rotate(0deg);
   transition: all 0.2s ease-in-out;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .lumina-dropdown-icon-open {
@@ -1660,6 +1670,7 @@ a.lumina-link-disabled {
 }
 .lumina-breadcrumb-chevron {
   margin-left: 10px;
+  padding-top: 2px;
   svg {
     path {
       stroke: $blue-persian;
@@ -2332,6 +2343,10 @@ a.lumina-link-disabled {
   z-index: 5000;
 }
 .lumina-toast-icon {
+  svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 .lumina-toast {
   border: 1px solid #ccc;

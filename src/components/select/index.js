@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/module.scss";
 import { isType } from "../../utils";
-import { LuminaIcon } from "lumina-design-icons";
+import ChevronDownIcon from "../../assets/icons/ChevronDown.js";
+
 export default ({ ...props }) => {
   let { name, className, id, onChange, label, children, value } = props;
   if (props === undefined) {
@@ -93,14 +94,14 @@ export default ({ ...props }) => {
               `${isOpen ? styles["lumina-dropdown-icon-open"] : ""}`
             ].join(" ")}
           ></i> */}
-          <LuminaIcon
-            name='chevron-down'
-            size={18}
+          <span
             className={[
               `${styles["lumina-dropdown-icon"]}`,
               `${isOpen ? styles["lumina-dropdown-icon-open"] : ""}`
             ].join(" ")}
-          />
+          >
+            <ChevronDownIcon />
+          </span>
         </div>
         <div
           className={[

@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import styles from "../../styles/module.scss";
-import { LuminaIcon } from "lumina-design-icons";
+import CheckIcon from "../../assets/icons/Check.js";
+import ExclamationTriangleIcon from "../../assets/icons/ExclamationTriangle.js";
 export default ({ ...props }) => {
   let {
     className,
@@ -51,7 +52,7 @@ export default ({ ...props }) => {
               styles["lumina-progress-status-green"]
             ].join(" ")}
           >
-            <LuminaIcon size={14} name='check' />
+            <CheckIcon />
           </div>
         )}
         {error && (
@@ -61,7 +62,7 @@ export default ({ ...props }) => {
               styles["lumina-progress-status-red"]
             ].join(" ")}
           >
-            <LuminaIcon size={14} name='exclamation-triangle' />
+            <ExclamationTriangleIcon />
           </div>
         )}
       </div>

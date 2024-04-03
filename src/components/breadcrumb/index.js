@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/module.scss";
 import { isType } from "../../utils";
-import { LuminaIcon } from "lumina-design-icons";
+import ChevronRightIcon from "../../assets/icons/ChevronRight";
 export default ({ ...props }) => {
   const { crumbs, className, crumbClassName, style, id } = props;
   if (!isType("Array", crumbs)) {
@@ -37,11 +37,7 @@ export default ({ ...props }) => {
           <span
             className={`${styles["lumina-breadcrumb-chevron"]} lumina-breadcrumb-chevron`}
           >
-            {i < crumbs.length - 1 ? (
-              <LuminaIcon name='chevron-right' size={13} />
-            ) : (
-              ""
-            )}
+            {i < crumbs.length - 1 ? <ChevronRightIcon /> : ""}
           </span>
         </div>
       ))}
