@@ -29,8 +29,8 @@ $button-seconday: #f9f9f9;
 }
 @mixin vertical-center-left {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 }
 @mixin vertical-center-right {
   display: flex;
@@ -1442,7 +1442,7 @@ a.lumina-link-disabled {
 
 .lumina-dropdown {
   margin-top: 30px;
-  width: 300px;
+  width: auto;
   border-radius: 6px;
   border: 1px solid $gray-light;
   background-color: white;
@@ -1464,6 +1464,7 @@ a.lumina-link-disabled {
 .lumina-select-label-visible {
   opacity: 1;
   background-color: transparent;
+  top: -25px;
 }
 .lumina-dropdown-header {
   padding: 15px;
@@ -1473,6 +1474,12 @@ a.lumina-link-disabled {
   align-items: center;
   font-weight: 700;
   @include Montserrat;
+}
+.lumina-dropdown-value {
+  max-width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .lumina-dropdown-body {
@@ -2422,6 +2429,7 @@ a.lumina-link-disabled {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  width: fit-content;
 }
 
 .lumina-toast__close-btn {
@@ -2437,6 +2445,12 @@ a.lumina-link-disabled {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lumina-toast {
+    max-width: none;
   }
 }
 

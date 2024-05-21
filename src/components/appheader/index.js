@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../../styles/module.scss";
 import CloseIcon from "../../assets/icons/Close.js";
 import BarsIcon from "../../assets/icons/Bars.js";
+
 export default ({ ...props }) => {
   const [menuOpen, toggleMenu] = useState(false);
+  const headerRef = useRef(null);
+  const menuRef = useRef(null);
 
   const _handleLogoClick = () => {
     if (typeof props.onIconClick === "function") {
@@ -11,27 +14,45 @@ export default ({ ...props }) => {
     }
   };
 
-  useEffect(() => {
-    const pageClickEvent = (e) => {
-      e.preventDefault();
-      if (!e.target.closest(".lumina-header-hamburger-btn")) {
-        // toggleMenu(false);
-      }
-    };
-
-    if (menuOpen) {
-      window.addEventListener("click", pageClickEvent);
-    }
-
-    return () => {
-      window.removeEventListener("click", pageClickEvent);
-    };
-  }, [menuOpen]);
   const _handleClick = () => {
     toggleMenu(!menuOpen);
   };
+
+  const handleClickOutside = (event) => {
+    if (
+      headerRef.current &&
+      !headerRef.current.contains(event.target) &&
+      menuRef.current &&
+      !menuRef.current.contains(event.target)
+    ) {
+      toggleMenu(false);
+    }
+  };
+
+  const handleClickInsideMenu = (event) => {
+    if (menuRef.current && menuRef.current.contains(event.target)) {
+      toggleMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickInsideMenu);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickInsideMenu);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickInsideMenu);
+    };
+  }, [menuOpen]);
+
   return (
     <div
+      ref={headerRef}
       className={[
         styles["lumina-header-wrapper"],
         "lumina-header-wrapper",
@@ -54,25 +75,16 @@ export default ({ ...props }) => {
             ].join(" ")}
             onClick={_handleClick}
           >
-            {/* <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`} /> */}
             {menuOpen ? <CloseIcon /> : <BarsIcon />}
           </button>
         )}
         {props.logo && (
-          // <img
-          //   src={props.logo ? props.logo : LogoBase64} //'https://s3.amazonaws.com/static.elysium-cloud.com/images/logo.png'
-          //   alt='Elysium Cloud'
-          //   className={[
-          //     styles["lumina-header-app-logo-img"],
-          //     "lumina-header-app-logo-img"
-          //   ].join(" ")}
-          //   onClick={_handleLogoClick}
-          // />
           <div
             className={[
               styles["lumina-header-app-logo-wrapper"],
               "lumina-header-logo-wrapper"
             ].join(" ")}
+            onClick={() => _handleLogoClick()}
           >
             {props.logo}
           </div>
@@ -97,6 +109,7 @@ export default ({ ...props }) => {
       </div>
       {menuOpen ? (
         <div
+          ref={menuRef}
           className={[
             styles["lumina-header-hamburger-menu"],
             "lumina-header-hamburger-menu"

@@ -85,7 +85,11 @@ export default ({ ...props }) => {
           className={`${styles["lumina-dropdown-header"]} lumina-dropdown-header`}
           onClick={toggleDropdown}
         >
-          {displayValue}
+          <span
+            className={`${styles["lumina-dropdown-value"]} lumina-dropdown-value`}
+          >
+            {displayValue}
+          </span>
           {/* <i
             className={[
               `fa`,

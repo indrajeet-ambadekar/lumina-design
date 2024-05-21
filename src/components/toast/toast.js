@@ -28,22 +28,22 @@ export const Toast = (props) => {
   const toastTypeMap = {
     default: null,
     success: (
-      <span className={`${styles["lumina-toast-icon"]}`}>
+      <span className={`${styles["lumina-toast-icon"]} lumina-toast-icon`}>
         <ThumbsUpIcon />
       </span>
     ),
     error: (
-      <span className={`${styles["lumina-toast-icon"]}`}>
+      <span className={`${styles["lumina-toast-icon"]} lumina-toast-icon`}>
         <ExclamationTriangleIcon />
       </span>
     ),
     warn: (
-      <span className={`${styles["lumina-toast-icon"]}`}>
+      <span className={`${styles["lumina-toast-icon"]} lumina-toast-icon`}>
         <ExclamationTriangleIcon />
       </span>
     ),
     info: (
-      <span className={`${styles["lumina-toast-icon"]}`}>
+      <span className={`${styles["lumina-toast-icon"]} lumina-toast-icon`}>
         <LightbulbAlt />
       </span>
     )
