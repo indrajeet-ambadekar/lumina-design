@@ -1331,6 +1331,10 @@ a.lumina-link-disabled {
   font-size: 1rem;
   font-weight: 500;
 }
+.lumina-password-input {
+  -webkit-text-security: circle;
+  text-security: circle;
+}
 .input-focused {
   border-color: $blue-persian;
   label {

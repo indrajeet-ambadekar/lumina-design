@@ -34,7 +34,9 @@ import {
   ToggleSwitch,
   Tooltip
 } from "lumina-design";
+import * as LuminaComponents from "lumina-design";
 import { LuminaIcon } from "lumina-design-icons";
+console.log(Object.keys(LuminaComponents));
 const floating_buttons = [
   {
     icon: <LuminaIcon name='home' size={20} />,
@@ -779,6 +781,7 @@ type--> 'text','number','mobile'
           textStyle='uppercase'
           name='password'
           label='Password'
+          autoFocus={true}
           onBlur={(event) => {
             console.log("ON BLUR EVENT", event?.target?.value);
           }}

@@ -174,14 +174,20 @@ export default ({ ...props }) => {
         </span>
       )}
       <input
-        type={
-          ["text", "password", "email", "mobile"].includes(type) ? type : "text"
-        }
+        // type={
+        //   ["text", "password", "email", "mobile"].includes(type) ? type : "text"
+        // }
+        type={["text", "email", "mobile"].includes(type) ? type : "text"}
         value={value}
         data-testid={testId}
         onChange={(e) => _handleOnChange(e.target.value)}
         placeholder={placeholder || ""}
-        className={styles["lumina-input-field"]}
+        className={`${styles["lumina-input-field"]} ${
+          type === "password"
+            ? `${styles["lumina-password-input"]} lumina-password-input`
+            : ""
+        }`}
+        tabIndex={props.tabIndex || -1}
         name={name || label}
         onFocus={_handleOnFocus}
         onBlur={_handleOnBlur}
