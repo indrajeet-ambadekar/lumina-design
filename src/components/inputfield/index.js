@@ -194,7 +194,7 @@ export default ({ ...props }) => {
         }
         autoFocus={props.autoFocus || false}
         disabled={props.disabled || false}
-        maxLength={type === "mobile" ? 10 : props.maxLength || 500000}
+        maxLength={type === "mobile" ? 15 : props.maxLength || 500000}
         ref={inputEl}
       />
       {iconRight && (
