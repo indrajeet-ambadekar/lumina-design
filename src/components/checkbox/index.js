@@ -8,7 +8,7 @@ export default ({ ...props }) => {
       id={props.id || null}
       className={[
         `${styles["lumina-checkbox"]}`,
-        "elc-ui-checkbox",
+        "lumina-design-checkbox",
         `${props.className || ""}`,
         props.disabled ? styles["lumina-checkbox-disabled"] : ""
       ].join(" ")}

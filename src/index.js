@@ -38,7 +38,7 @@ export const LuminaProvidor = ({ children }) => {
   //   imported.crossOrigin = "anonymous";
   //   document.head.appendChild(imported);
   // }, []);
-  return <div className="lumina-design-wrapper">{children}</div>;
+  return <div className='lumina-design-wrapper'>{children}</div>;
 };
 
 export {

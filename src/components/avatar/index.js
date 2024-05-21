@@ -9,7 +9,7 @@ export default ({ ...props }) => {
     <div
       className={[
         `${styles["avatar"]}`,
-        `elc-ui-avatar`,
+        `lumina-design-avatar`,
         `${styles[avatarSizeClass]}`,
         className || ""
       ].join(" ")}

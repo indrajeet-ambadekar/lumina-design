@@ -38,17 +38,8 @@ export default ({ ...props }) => {
     }
   };
   function _handleOnChange(value) {
-    // const { value, selectionEnd } = event.target;
-    // const rightCharsCount = value.length - selectionEnd;
-    // const newPosition = value.length - rightCharsCount;
     setValue(processByType(value, type || "text", textStyle || null));
-
-    // setTimeout(() => {
-    //   if (type !== "email") {
-    //     inputEl.current.setSelectionRange(newPosition, newPosition);
-    //   }
-    // }, 0);
-    props.onChange(value);
+    props.onChange(processByType(value, type || "text", textStyle || null));
   }
   return (
     <div
@@ -61,24 +52,13 @@ export default ({ ...props }) => {
     >
       {label && <label>{label}</label>}
 
-      {type === "mobile" ? (
+      {iconLeft && (
         <span
           className={[styles["lumina-input-icon-left"], "icon-left"].join(" ")}
         >
-          <span className={styles["lumina-static-icon-left"]}>+91</span>
+          {iconLeft}
         </span>
-      ) : (
-        iconLeft && (
-          <span
-            className={[styles["lumina-input-icon-left"], "icon-left"].join(
-              " "
-            )}
-          >
-            {iconLeft}
-          </span>
-        )
       )}
-
       <input
         type={
           ["text", "password", "email", "mobile"].includes(type) ? type : "text"
@@ -113,10 +93,10 @@ export default ({ ...props }) => {
   );
 };
 const processByType = (str, type, textCase) => {
+  console.log(str, type, textCase);
   if (type === "number" || type === "mobile") {
-    str = str.replace(/[^0-9\.]+/g, "");
-  }
-  if (type === "text" || type === "email") {
+    str = str.replace(/[^0-9]+/g, ""); // Allow only numeric characters (0-9)
+  } else if (type === "text" || type === "email") {
     switch (textCase) {
       case "uppercase":
         str = str.toUpperCase();

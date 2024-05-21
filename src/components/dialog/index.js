@@ -5,7 +5,7 @@ import styles from "../../styles/module.scss";
 export default ({ open, hide, ...props }) => {
   let needHeader = props.header || false;
   const handleClick = (event) => {
-    if (event.target.closest(".elc-ui-dialog") === null) {
+    if (event.target.closest(".lumina-design-dialog") === null) {
       hide();
     }
   };
@@ -14,14 +14,14 @@ export default ({ open, hide, ...props }) => {
         <React.Fragment>
           <div
             className={[
-              "elc-ui-dialog-overlay",
+              "lumina-design-dialog-overlay",
               `${styles["dialog-overlay"]}`
             ].join(" ")}
             onClick={hide}
           />
           <div
             className={[
-              `elc-ui-dialog-wrapper`,
+              `lumina-design-dialog-wrapper`,
               `${styles["dialog-wrapper"]}`
             ].join(" ")}
             aria-modal
@@ -31,11 +31,15 @@ export default ({ open, hide, ...props }) => {
             id={props.id || null}
             onClick={handleClick}
           >
-            <div className={[`elc-ui-dialog`, `${styles["dialog"]}`].join(" ")}>
+            <div
+              className={[`lumina-design-dialog`, `${styles["dialog"]}`].join(
+                " "
+              )}
+            >
               {needHeader && (
                 <div
                   className={[
-                    `elc-ui-dialog-header`,
+                    `lumina-design-dialog-header`,
                     `${styles["dialog-header"]}`
                   ].join(" ")}
                 >
