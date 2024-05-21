@@ -760,12 +760,25 @@ type--> 'text','number','mobile'
 `}
         </pre>
         <InputField
-          type='email'
+          type='text'
           value={textValue}
           onChange={(val) => setTextValue(val)}
           className='text-field'
           textStyle='uppercase'
-          label='Full Name'
+          name='username'
+          label='user Name'
+          onBlur={(event) => {
+            console.log("ON BLUR EVENT", event?.target?.value);
+          }}
+        />
+        <InputField
+          type='password'
+          value={textValue}
+          onChange={(val) => setTextValue(val)}
+          className='text-field'
+          textStyle='uppercase'
+          name='password'
+          label='Password'
           onBlur={(event) => {
             console.log("ON BLUR EVENT", event?.target?.value);
           }}
