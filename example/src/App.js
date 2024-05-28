@@ -463,24 +463,24 @@ type-->        'primary','secondary','text'
 />
 `}
         </pre>
-        <div className='flex-row'>
+        <div className='flex-col'>
           <Checkbox
             name='options'
             onChange={(value) => toggleCheckbox1(value)}
             checked={checkboxFlag1}
-            label='IceCream'
+            label='IceCream IceCream IceCream IceCream'
           ></Checkbox>
           <Checkbox
             name='options'
             onChange={(value) => toggleCheckbox2(value)}
             checked={checkboxFlag2}
-            label='Falooda'
+            label='Falooda Falooda Falooda Falooda'
           ></Checkbox>
           <Checkbox
             name='options'
             onChange={(value) => toggleCheckbox3(value)}
             checked={checkboxFlag3}
-            label='Milkshake'
+            label='Milkshake Milkshake Milkshake Milkshake'
             disabled={true}
           ></Checkbox>
         </div>
@@ -781,7 +781,7 @@ type--> 'text','number','mobile'
           textStyle='uppercase'
           name='password'
           label='Password'
-          autoFocus={true}
+          autoFocus={false}
           onBlur={(event) => {
             console.log("ON BLUR EVENT", event?.target?.value);
           }}

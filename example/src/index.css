@@ -54,6 +54,13 @@ pre {
   align-items: center;
   justify-content: space-around;
 }
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80px;
+}
 .bottom-nav-demo {
   position: absolute;
   bottom: 30px;

@@ -4,7 +4,11 @@ export default ({ ...props }) => {
   let subProps = { ...props };
   delete subProps.children;
   let icon = props.icon;
+  let iconLeft = props.iconLeft;
+  let iconRight = props.iconRight;
   delete subProps.icon;
+  delete subProps.iconLeft;
+  delete subProps.iconRight;
   return (
     <button
       {...subProps}
@@ -14,10 +18,17 @@ export default ({ ...props }) => {
         `${props.className || ""}`
       ].join(" ")}
     >
-      {props.children}
-      {icon ? (
+      {iconLeft ? (
         <span className={`${styles["lumina-button-icon"]} lumina-button-icon`}>
-          {icon}
+          {iconLeft}
+        </span>
+      ) : (
+        ""
+      )}
+      {props.children}
+      {iconRight || icon ? (
+        <span className={`${styles["lumina-button-icon"]} lumina-button-icon`}>
+          {iconRight || icon}
         </span>
       ) : (
         ""
