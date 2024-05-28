@@ -1,8 +1,8 @@
 {
   "name": "lumina-design",
-  "version": "0.1.8",
+  "version": "0.1.12",
   "description": "Made with create-react-library",
-  "author": "",
+  "author": "Indrajeet Ambadekar",
   "license": "MIT",
   "repository": "/lumina-design",
   "main": "dist/index.js",

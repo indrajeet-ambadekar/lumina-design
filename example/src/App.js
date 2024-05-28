@@ -463,21 +463,24 @@ type-->        'primary','secondary','text'
 />
 `}
         </pre>
-        <div className='flex-col'>
+        <div className='dummy-wrapper'>
           <Checkbox
             name='options'
+            className='dummy-checkbox'
             onChange={(value) => toggleCheckbox1(value)}
             checked={checkboxFlag1}
             label='IceCream IceCream IceCream IceCream'
           ></Checkbox>
           <Checkbox
             name='options'
+            className='dummy-checkbox'
             onChange={(value) => toggleCheckbox2(value)}
             checked={checkboxFlag2}
             label='Falooda Falooda Falooda Falooda'
           ></Checkbox>
           <Checkbox
             name='options'
+            className='dummy-checkbox'
             onChange={(value) => toggleCheckbox3(value)}
             checked={checkboxFlag3}
             label='Milkshake Milkshake Milkshake Milkshake'

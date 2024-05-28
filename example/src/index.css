@@ -74,3 +74,22 @@ pre {
 .lumina-toggle-nav {
   position: absolute;
 }
+
+.dummy-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-height: 30vh;
+  width: 70vw;
+  margin: 0 auto;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  flex-direction: column;
+  padding-top: 1rem;
+  position: relative;
+  padding-bottom: 3rem;
+}
+.dummy-checkbox {
+  margin-bottom: 1rem;
+}

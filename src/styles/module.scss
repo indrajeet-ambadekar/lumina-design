@@ -1109,11 +1109,11 @@ $one-grid: calc(100% / 12);
 // ######################## CHECKBOX STYLES ##############################
 
 .lumina-checkbox {
-  margin: 0 auto;
-  display: inline-flex;
+  // margin: auto;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   // min-width: 14px;
   // max-width: 26px;
   min-height: 14px;
@@ -1129,37 +1129,45 @@ $one-grid: calc(100% / 12);
 
 .checkbox-round {
   position: relative;
+  aspect-ratio: 1 / 1;
+  width: 20px;
+  height: 20px;
   label {
     background-color: transparent;
     border: 2px solid #ccc;
     border-radius: 6px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 20px; /* Width */
+    height: 100%; /* Height */
     position: absolute;
     left: 0;
     top: 0;
+    aspect-ratio: 1 / 1;
+
     &:after {
       border: 2px solid #fff;
       border-top: none;
       border-right: none;
       content: "";
-      top: 4px;
-      left: 2px;
+      top: 20%; /* Adjust position */
+      left: 20%; /* Adjust position */
       opacity: 0;
       position: absolute;
       transform: rotate(-45deg);
-      width: 10px;
-      height: 4px;
+      width: 50%; /* Adjust size */
+      height: 25%; /* Adjust size */
     }
   }
+
   input[type="checkbox"] {
     visibility: hidden;
   }
+
   input[type="checkbox"]:checked + label {
     background-color: $lumina-orange;
     border-color: $lumina-orange;
   }
+
   input[type="checkbox"]:checked + label:after {
     opacity: 1;
   }
@@ -1179,7 +1187,6 @@ $one-grid: calc(100% / 12);
   font-size: 1rem;
   height: 100%;
   @include vertical-center-left;
-  padding-top: 2px;
   color: $black-raisin;
   @include Montserrat;
 }
