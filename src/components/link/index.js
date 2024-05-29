@@ -25,6 +25,7 @@ export default ({ ...props }) => {
       id={props.id || null}
       onClick={_handleClick}
       style={props.style || null}
+      {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
     >
       {props.children}
     </a>

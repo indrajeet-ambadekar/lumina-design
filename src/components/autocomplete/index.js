@@ -62,6 +62,7 @@ export default ({ ...props }) => {
           value={inputValue}
           onChange={_watchInput}
           placeholder={props?.placeholder || "Start typing..."}
+          {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
         />
         {inputValue.length > 0 && (
           <button

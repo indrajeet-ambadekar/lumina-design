@@ -14,7 +14,7 @@ export default ({ ...props }) => {
       id={id || null}
       style={{ ...style }}
       onClick={onClick}
-      tabIndex={-1}
+      {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
     >
       {icon ? (
         <span className={`${styles["lumina-flbtn-icon"]} lumina-flbtn-icon`}>

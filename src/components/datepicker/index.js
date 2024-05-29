@@ -54,6 +54,7 @@ export default ({ ...props }) => {
         onChange={(value) => setValue(value)}
         value={value || null}
         clearIcon={null}
+        {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
         calendarIcon={
           calendarIcon || (
             <span

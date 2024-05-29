@@ -266,21 +266,21 @@ body {
   transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
 }
 ._acrdn-title-custom {
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   color: $black-raisin;
   @include Montserrat;
-  padding: 1rem;
+  padding: 10px 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 ._acrdn-title {
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   @include Montserrat;
-  padding: 1rem;
+  padding: 10px 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -320,7 +320,11 @@ body {
   padding: 1em;
 }
 .accordion_collapse-controls {
-  font-size: 22px;
+  font-size: 18px;
+  * {
+    max-width: 20px !important;
+    max-height: 20px !important;
+  }
 }
 
 // ######################## DIALOG STYLES ##############################
@@ -1085,15 +1089,18 @@ $one-grid: calc(100% / 12);
     }
     font-weight: 600;
   }
-  &[buttonsize="S"] {
+  &[buttonsize="S"],
+  &[size="S"] {
     padding: 0.3rem 1rem;
     font-size: 13px;
   }
-  &[buttonsize="M"] {
+  &[buttonsize="M"],
+  &[size="M"] {
     padding: 0.7rem 1.5rem;
     font-size: 15px;
   }
-  &[buttonsize="L"] {
+  &[buttonsize="L"],
+  &[size="L"] {
     padding: 1rem 1.8rem;
     font-size: 18px;
   }
@@ -1482,12 +1489,12 @@ a.lumina-link-disabled {
   top: -25px;
 }
 .lumina-dropdown-header {
-  padding: 15px;
+  height: 40px;
+  padding: 5px 15px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 700;
   @include Montserrat;
 }
 .lumina-dropdown-value {
@@ -1495,6 +1502,7 @@ a.lumina-link-disabled {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: 500;
 }
 
 .lumina-dropdown-body {
@@ -1527,19 +1535,19 @@ a.lumina-link-disabled {
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  min-height: 45px;
+  min-height: 40px;
 }
 .lumina-dropdown-item-selected {
   color: $white;
   background-color: $blue-persian;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .lumina-dropdown-item:hover {
   cursor: pointer;
-  color: $white;
-  background-color: $blue-persian;
-  font-weight: 700;
+  // color: $white;
+  background-color: $gray-isabelline;
+  font-weight: 500;
 }
 
 .lumina-dropdown-item-dot {
@@ -2013,7 +2021,7 @@ a.lumina-link-disabled {
     width: fit-content;
     padding: 9px 20px 6px 20px;
     display: block;
-    max-width: 100px;
+    // max-width: 100px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

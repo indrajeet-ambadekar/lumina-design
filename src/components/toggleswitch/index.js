@@ -8,7 +8,8 @@ const ToggleSwitch = ({
   optionLabels,
   small,
   disabled,
-  className
+  className,
+  tabIndex
 }) => {
   function handleKeyPress(e) {
     if (e.keyCode !== 32) return;
@@ -36,6 +37,7 @@ const ToggleSwitch = ({
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
         disabled={disabled}
+        {...(tabIndex !== undefined && { tabIndex: tabIndex })}
       />
       {id ? (
         <label

@@ -32,7 +32,12 @@ const MenuDropdown = ({ ...props }) => {
         props?.className || ""
       ].join(" ")}
     >
-      <div className={[styles["lumina-menu-container"],'lumina-menu-container'].join(" ")}>
+      <div
+        className={[
+          styles["lumina-menu-container"],
+          "lumina-menu-container"
+        ].join(" ")}
+      >
         <button
           className={[
             styles["lumina-menu-dropdown-button"],
@@ -40,6 +45,7 @@ const MenuDropdown = ({ ...props }) => {
             props?.buttonClassName || ""
           ].join(" ")}
           onClick={() => setMenuVisible(!isMenuVisible)}
+          {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
         >
           {props.label}
         </button>

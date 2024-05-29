@@ -26,6 +26,7 @@ export default ({ ...props }) => {
           onChange={(event) => props.onChange(event.target.checked)}
           checked={props.checked}
           disabled={props.disabled}
+          {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
         />
         <label htmlFor={`checkbox-${index}`}></label>
       </div>

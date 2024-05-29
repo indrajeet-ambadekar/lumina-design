@@ -1,6 +1,14 @@
 import React from "react";
 import styles from "../../styles/module.scss";
-const ToggleInput = ({ id, name, checked, onChange, disabled, className }) => {
+const ToggleInput = ({
+  id,
+  name,
+  checked,
+  onChange,
+  disabled,
+  className,
+  tabIndex
+}) => {
   if (name === null || name === undefined) {
     throw new Error("`name` is a required field for switch");
   }
@@ -20,6 +28,7 @@ const ToggleInput = ({ id, name, checked, onChange, disabled, className }) => {
       disabled={disabled}
       name={name}
       id={id || null}
+      {...(tabIndex !== undefined && { tabIndex: tabIndex })}
     ></input>
   );
 };

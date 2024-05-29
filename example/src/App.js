@@ -122,8 +122,8 @@ const App = () => {
           `}</pre>
         <Accordion
           title={<div className='accordion-heading'>Accordion Component</div>}
-          openIcon={<LuminaIcon name='chevron-down' size={24} />}
-          collapseIcon={<LuminaIcon name='chevron-up' size={24} />}
+          openIcon={<LuminaIcon name='chevron-down' size={28} />}
+          collapseIcon={<LuminaIcon name='chevron-up' size={28} />}
           className='demo-card-accordion'
           defaultOpen={false}
           id='accordion1'

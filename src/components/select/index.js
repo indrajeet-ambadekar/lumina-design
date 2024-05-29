@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "../../styles/module.scss";
 import { isType } from "../../utils";
 import ChevronDownIcon from "../../assets/icons/ChevronDown.js";
 
 export default ({ ...props }) => {
+  const dropdownRef = useRef(null);
   let { name, className, id, onChange, label, children, value } = props;
   if (props === undefined) {
     return false;
@@ -57,10 +58,27 @@ export default ({ ...props }) => {
   } else {
     displayValue = label;
   }
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setOpen(false); // Close the dropdown if clicked outside
+    }
+  };
+
+  // Use useEffect to attach and remove click event listener
+  useEffect(() => {
+    const handleOutsideClick = handleClickOutside;
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick); // Cleanup
+    };
+  }, [isOpen]);
   return (
     <div
       className={["lumina-select-field", className || ""].join(" ")}
       id={id || null}
+      ref={dropdownRef}
     >
       <div
         className={[
@@ -68,7 +86,7 @@ export default ({ ...props }) => {
           isFocused ? styles["lumina-dropdown-focused"] : "",
           "lumina-dropdown"
         ].join(" ")}
-        tabIndex='0'
+        {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
         onFocus={_handleOnFocus}
         onBlur={_handleOnBlur}
       >

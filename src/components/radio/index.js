@@ -33,6 +33,7 @@ export default ({ ...props }) => {
           " "
         )}
         onChange={(e) => props.onChange(e.target.value)}
+        {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
       />
       <label
         htmlFor={`lumina-radio-${index}`}

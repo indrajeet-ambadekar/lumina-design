@@ -49,8 +49,8 @@ export const Tabs = ({ ...props }) => {
                 : styles["lumina-tab-chip"],
               _tab.isActive
                 ? props.mode === "contained"
-                  ? styles["lumina-active-contained-tab-chip"]
-                  : styles["lumina-active-tab-chip"]
+                  ? `${styles["lumina-active-contained-tab-chip"]} active-tab-chip`
+                  : `${styles["lumina-active-tab-chip"]} active-tab-chip`
                 : "",
               "lumina-tab-chip"
             ].join(" ")}

@@ -59,7 +59,7 @@ export default ({ open, hide, ...props }) => {
               )}
               <div
                 className={[
-                  `dialog-content`,
+                  `lumina-design-dialog-content`,
                   `${styles["dialog-content-wrapper"]}`
                 ].join(" ")}
               >
