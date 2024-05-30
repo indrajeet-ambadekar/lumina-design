@@ -166,13 +166,13 @@ const App = () => {
             </Avatar>
           }
         >
-          <h1>APP HEADER</h1>
-          <h1>APP HEADER</h1>
-          <h1>APP HEADER</h1>
-          <h1>APP HEADER</h1>
-          <h1>APP HEADER</h1>
-          <h1>APP HEADER</h1>
-          <h1>APP HEADER</h1>
+          <h1 onClick={() => alert("hakuna matata")}>APP HEADER</h1>
+          <h1 onClick={() => alert("testing")}>APP HEADER</h1>
+          <h1 onClick={() => alert("testing")}>APP HEADER</h1>
+          <h1 onClick={() => alert("testing")}>APP HEADER</h1>
+          <h1 onClick={() => alert("testing")}>APP HEADER</h1>
+          <h1 onClick={() => alert("testing")}>APP HEADER</h1>
+          <h1 onClick={() => alert("testing")}>APP HEADER</h1>
         </AppHeader>
       </section>
       <section className='showcase-item'>
@@ -1121,11 +1121,6 @@ error--> true / false [boolean]
         </pre>
         <Tabs mode='default'>
           <TabCard active={true} title={<span>TAB I</span>}>
-            {/* TAB ONE: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate */}
             <ol>
               {["apple", "banana", "carrot"].map((x, i) => (
                 <li key={i}>{x}</li>
@@ -1133,18 +1128,22 @@ error--> true / false [boolean]
             </ol>
           </TabCard>
           <TabCard title={<span>TAB II</span>}>
-            TAB TWO: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate
+            <div onClick={() => alert("Clicked Tab one")}>TAB one</div>
           </TabCard>
           <TabCard title={<span>TAB III</span>}>
-            TAB THREE: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate
+            <InputField
+              type='text'
+              value={textValue}
+              onChange={(val) => setTextValue(val)}
+              className='text-field'
+              textStyle='uppercase'
+              name='username'
+              label='user Name'
+              onBlur={(event) => {
+                console.log("ON BLUR EVENT", event?.target?.value);
+              }}
+            />
+            <div onClick={() => alert("Clicked Tab Two")}>TAB Two</div>
           </TabCard>
         </Tabs>
       </section>
