@@ -75,6 +75,11 @@ export const Tabs = ({ ...props }) => {
     </div>
   );
 };
-export const TabCard = ({ ...props }) => {
-  return <React.Fragment>{props.children}</React.Fragment>;
+export const TabCard = ({ children }) => {
+  return (
+    <React.Fragment
+      key={children}
+      dangerouslySetInnerHTML={{ __html: children }}
+    ></React.Fragment>
+  );
 };
