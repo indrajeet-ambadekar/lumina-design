@@ -13,6 +13,7 @@ import Chip from "./components/Chip";
 import Column from "./components/column";
 import DatePicker from "./components/datepicker";
 import Dialog from "./components/dialog";
+import ResizablePanel from "./components/dragresizeable";
 import FloatingButton from "./components/floatingbutton";
 import FloatingMenu from "./components/floatingmenu";
 import InputField from "./components/inputfield";
@@ -55,6 +56,7 @@ export {
   Column,
   DatePicker,
   Dialog,
+  ResizablePanel,
   FloatingButton,
   FloatingMenu,
   InputField,

@@ -14,6 +14,7 @@ import {
   Column,
   DatePicker,
   Dialog,
+  ResizablePanel,
   FloatingButton,
   FloatingMenu,
   InputField,
@@ -1435,7 +1436,31 @@ toast.warn("MESSAGE",time_in_milliseconds)
           <div>BottomToolTip</div>
         </Tooltip>
       </section>
-
+      <section className='showcase-item custom'>
+        <ResizablePanel
+          initialWidth={window.innerWidth * 0.4}
+          leftContent={
+            <div className='code-block'>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+            </div>
+          }
+          rightContent={
+            <div className='review-content'>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+            </div>
+          }
+        />
+      </section>
       {/* <section className='showcase-item'>
           <Text type='h2'>Icon Component</Text>
           <div className='icon-cntnr'>

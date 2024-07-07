@@ -62,7 +62,7 @@ pre {
   min-height: 80px;
 }
 .bottom-nav-demo {
-  position: absolute;
+  position: absolute !important;
   bottom: 30px;
 }
 .grid-content {
@@ -72,7 +72,7 @@ pre {
   justify-content: center;
 }
 .lumina-toggle-nav {
-  position: absolute;
+  position: absolute !important;
 }
 
 .dummy-wrapper {
