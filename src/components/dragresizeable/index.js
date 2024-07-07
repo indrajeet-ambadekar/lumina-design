@@ -6,28 +6,35 @@ import styles from "../../styles/module.scss";
 const ResizablePanel = ({
   leftContent,
   rightContent,
-  initialWidth = window.innerWidth * 0.4
+  initialWidth = window.innerWidth * 0.4,
+  className,
+  id
 }) => {
   const { containerRef, columnWidth, setResizing } =
     useDraggableResizer(initialWidth);
 
   return (
-    <div className={`${styles["resizable-panel"]} resizable-panel`}>
+    <div
+      className={`${styles["lumina-resizable-panel"]} lumina-resizable-panel ${
+        className || ""
+      }`}
+      id={id || null}
+    >
       <div
-        className={`${styles["left-container"]} left-container`}
+        className={`${styles["lumina-left-container"]} lumina-left-container`}
         style={{ width: columnWidth }}
         ref={containerRef}
       >
         {leftContent}
         <div
-          className={`${styles["resize-handle"]} resize-handle`}
+          className={`${styles["lumina-resize-handle"]} lumina-resize-handle`}
           onMouseDown={() => setResizing(true)}
         >
           <MoreVertical width={38} height={38} />
         </div>
       </div>
       <div
-        className={`${styles["right-container"]} right-container`}
+        className={`${styles["lumina-right-container"]} lumina-right-container`}
         style={{ width: `calc(100% - ${columnWidth}px)` }}
       >
         {rightContent}

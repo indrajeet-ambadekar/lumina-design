@@ -1436,12 +1436,22 @@ toast.warn("MESSAGE",time_in_milliseconds)
           <div>BottomToolTip</div>
         </Tooltip>
       </section>
-      <section className='showcase-item custom'>
+      <section className='showcase-item'>
         <ResizablePanel
           initialWidth={window.innerWidth * 0.4}
           leftContent={
             <div className='code-block'>
-              <h1>this is the left container</h1>
+              <h1>
+                this is the left containerthis is the left containerthis is the
+                left containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left container
+              </h1>
               <h1>this is the left container</h1>
               <h1>this is the left container</h1>
               <h1>this is the left container</h1>

@@ -2819,46 +2819,49 @@ a.lumina-link-disabled {
   font-size: 20px;
 }
 
-.resizable-panel {
+// ######################## RESIZABLE PANEL COMPONENT STYLES ##############################
+
+.lumina-resizable-panel {
   display: flex;
   width: 100%;
   height: 100%;
 }
 
-.left-container,
-.right-container {
+.lumina-left-container,
+.lumina-right-container {
   overflow: auto;
+  padding: 5px 15px;
 }
 
-.resize-handle {
+.lumina-resize-handle {
   cursor: col-resize;
   background-color: #e0e0e0;
   width: 10px;
   height: 100%;
 }
 
-.resizable-panel {
+.lumina-resizable-panel {
   display: flex;
   width: 100%;
   height: 100%;
   user-select: none; /* Prevents text selection during drag */
 }
 
-.left-container {
+.lumina-left-container {
   display: flex;
   flex-direction: column;
-  position: relative; /* Ensures absolute positioning of handle is relative to this container */
+  position: relative;
   overflow: hidden;
 }
 
-.right-container {
+.lumina-right-container {
   overflow: auto;
 }
 
-.resize-handle {
+.lumina-resize-handle {
   position: absolute;
   top: 0;
-  right: 20px; /* Position handle at the edge, slightly outside for better grip */
+  right: 0; /* Adjust position to be at the edge */
   width: 10px;
   height: 100%;
   cursor: col-resize;
@@ -2870,10 +2873,13 @@ a.lumina-link-disabled {
   justify-content: center;
 }
 
-.resize-handle svg {
+.lumina-resize-handle svg {
   pointer-events: none; /* Allows handle to be draggable without interference */
+  path {
+    stroke: $lumina-orange;
+  }
 }
 
-body.resizing {
+body.lumina-resizing {
   cursor: col-resize !important; /* Change cursor globally when resizing */
 }
