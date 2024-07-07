@@ -13,7 +13,6 @@ import Chip from "./components/Chip";
 import Column from "./components/column";
 import DatePicker from "./components/datepicker";
 import Dialog from "./components/dialog";
-import ResizablePanel from "./components/dragresizeable";
 import FloatingButton from "./components/floatingbutton";
 import FloatingMenu from "./components/floatingmenu";
 import InputField from "./components/inputfield";
@@ -22,6 +21,7 @@ import { MenuDropdown, MenuItem } from "./components/menudropdown";
 import Progress from "./components/progress";
 import RadioButton from "./components/radio";
 import RangeSlider from "./components/rangeslider";
+import ResizablePanel from "./components/dragresizeable";
 import SelectDropDown from "./components/select";
 import { Tabs, TabCard } from "./components/tabs";
 import TabSelect from "./components/tabselect";
@@ -56,7 +56,6 @@ export {
   Column,
   DatePicker,
   Dialog,
-  ResizablePanel,
   FloatingButton,
   FloatingMenu,
   InputField,
@@ -66,6 +65,7 @@ export {
   Progress,
   RadioButton,
   RangeSlider,
+  ResizablePanel,
   SelectDropDown,
   Tabs,
   TabCard,

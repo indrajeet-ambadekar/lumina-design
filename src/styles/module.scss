@@ -2883,3 +2883,10 @@ a.lumina-link-disabled {
 body.lumina-resizing {
   cursor: col-resize !important; /* Change cursor globally when resizing */
 }
+
+.lumina-markdown-container {
+  line-height: 1.5;
+  white-space: pre-wrap;
+  background-color: $white;
+  padding: 1rem 10px;
+}

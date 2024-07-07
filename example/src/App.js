@@ -14,7 +14,6 @@ import {
   Column,
   DatePicker,
   Dialog,
-  ResizablePanel,
   FloatingButton,
   FloatingMenu,
   InputField,
@@ -24,6 +23,7 @@ import {
   Progress,
   RadioButton,
   RangeSlider,
+  ResizablePanel,
   SelectDropDown,
   Tabs,
   TabCard,
@@ -1471,6 +1471,7 @@ toast.warn("MESSAGE",time_in_milliseconds)
           }
         />
       </section>
+
       {/* <section className='showcase-item'>
           <Text type='h2'>Icon Component</Text>
           <div className='icon-cntnr'>
