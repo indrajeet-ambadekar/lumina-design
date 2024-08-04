@@ -20,16 +20,21 @@ export default ({ ...props }) => {
     setInputValue(event.target.value);
     if (dataSetType === "flat") {
       if (event.target.value.length > 0) {
-        let _items = dataSet.filter((x) => x.includes(event.target.value));
+        let _items = dataSet.filter((x) =>
+          x.toLowerCase().includes(event.target.value)
+        );
         setSuggested(_items);
       } else {
         setSuggested([]);
       }
     } else {
       if (event.target.value.length > 0) {
-        let _items = dataSet.filter((x) =>
-          x[props?.dataTargetKey].includes(event.target.value)
+        let _items = dataSet.filter(
+          (x) =>
+            x[props?.dataTargetKey] &&
+            x[props?.dataTargetKey].toLowerCase().includes(event.target.value)
         );
+        console.log(_items, props?.dataTargetKey);
         setSuggested(_items);
       } else {
         setSuggested([]);

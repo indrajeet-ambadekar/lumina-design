@@ -37,6 +37,7 @@ import {
 } from "lumina-design";
 import * as LuminaComponents from "lumina-design";
 import { LuminaIcon } from "lumina-design-icons";
+import { COUNTRIES } from "./constants";
 console.log(Object.keys(LuminaComponents));
 const floating_buttons = [
   {
@@ -204,15 +205,8 @@ const App = () => {
             `}
         </pre>
         <AutoComplete
-          dataSet={[
-            { id: 1, name: "apple" },
-            { id: 2, name: "orange" },
-            { id: 3, name: "banana" },
-            { id: 4, name: "pine apple" },
-            { id: 5, name: "custard apple" },
-            { id: 6, name: "watermelon" }
-          ]}
-          onChange={(value) => setFruitName(value.name)}
+          dataSet={[...COUNTRIES]}
+          onChange={(value) => setFruitName(value.city)}
           value={fruitName}
           placeholder='Start typing here...'
           label='Enter fruit name'
@@ -222,7 +216,7 @@ const App = () => {
             <div className='autocomplete-row'>{_item.name}</div>
           )}
           dataSetType='nested' // flat / nested
-          dataTargetKey='name'
+          dataTargetKey='city'
         />
       </section>
       <section className='showcase-item'>
