@@ -108,14 +108,6 @@ export default ({ ...props }) => {
           >
             {displayValue}
           </span>
-          {/* <i
-            className={[
-              `fa`,
-              `fa-chevron-down`,
-              `${styles["lumina-dropdown-icon"]}`,
-              `${isOpen ? styles["lumina-dropdown-icon-open"] : ""}`
-            ].join(" ")}
-          ></i> */}
           <span
             className={[
               `${styles["lumina-dropdown-icon"]}`,

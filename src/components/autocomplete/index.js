@@ -1,50 +1,84 @@
 import React, { useEffect, useState } from "react";
 import _styles from "../../styles/module.scss";
 import { isType } from "../../utils";
-export default ({ ...props }) => {
-  const { className, id, style, value, label, dataSet, dataSetType } = props;
+import ChevronDownIcon from "../../assets/icons/ChevronDown.js";
+
+const AutoComplete = ({ ...props }) => {
+  const {
+    className,
+    id,
+    style,
+    value,
+    label,
+    dataSet,
+    dataSetType,
+    dataTargetKey,
+    placeholder,
+    onChange,
+    renderItem
+  } = props;
   const [inputValue, setInputValue] = useState(value);
   const [suggested, setSuggested] = useState([]);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
   if (!isType("Array", dataSet)) {
     throw new Error("'dataSet' attribute must be an array");
   }
   if (!["flat", "nested"].includes(dataSetType)) {
     throw new Error("'dataSetType' attribute must either 'flat' or 'nested'");
   }
-  if (dataSetType === "nested" && !props?.dataTargetKey) {
+  if (dataSetType === "nested" && !dataTargetKey) {
     throw new Error(
       "'dataTargetKey' attribute is mandatory for 'nested' dataSet type"
     );
   }
-  const _watchInput = (event) => {
-    setInputValue(event.target.value);
+
+  useEffect(() => {
+    setSuggested(dataSet);
+    setInputValue(value);
+  }, [dataSet, value]);
+
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setInputValue(value);
+    setDropdownVisible(true);
+
     if (dataSetType === "flat") {
-      if (event.target.value.length > 0) {
-        let _items = dataSet.filter((x) =>
-          x.toLowerCase().includes(event.target.value)
+      if (value.length > 0) {
+        const filteredItems = dataSet.filter((item) =>
+          item.toLowerCase().includes(value.toLowerCase())
         );
-        setSuggested(_items);
+        setSuggested(filteredItems);
       } else {
-        setSuggested([]);
+        setSuggested(dataSet);
       }
     } else {
-      if (event.target.value.length > 0) {
-        let _items = dataSet.filter(
-          (x) =>
-            x[props?.dataTargetKey] &&
-            x[props?.dataTargetKey].toLowerCase().includes(event.target.value)
+      if (value.length > 0) {
+        const filteredItems = dataSet.filter(
+          (item) =>
+            item[dataTargetKey] &&
+            item[dataTargetKey].toLowerCase().includes(value.toLowerCase())
         );
-        console.log(_items, props?.dataTargetKey);
-        setSuggested(_items);
+        setSuggested(filteredItems);
       } else {
-        setSuggested([]);
+        setSuggested(dataSet);
       }
     }
   };
-  useEffect(() => {
-    setInputValue(value);
+
+  const handleOptionClick = (item) => {
+    if (item[dataTargetKey] === null || item[dataTargetKey] === undefined) {
+      item[dataTargetKey] = "NULL VALUE";
+    }
+    setInputValue(dataSetType === "nested" ? item[dataTargetKey] : item);
     setSuggested([]);
-  }, [value]);
+    setDropdownVisible(false);
+    if (onChange) onChange(item);
+  };
+
+  const handleDropdownToggle = () => {
+    setDropdownVisible(!isDropdownVisible);
+  };
 
   return (
     <div
@@ -65,10 +99,27 @@ export default ({ ...props }) => {
         <label>{label}</label>
         <input
           value={inputValue}
-          onChange={_watchInput}
-          placeholder={props?.placeholder || "Start typing..."}
+          onChange={handleInputChange}
+          placeholder={placeholder || "Start typing..."}
           {...(props.tabIndex !== undefined && { tabIndex: props.tabIndex })}
         />
+        <button
+          className={[
+            _styles["lumina-auto-complete-dropdown-toggle"],
+            "lumina-auto-complete-dropdown-toggle"
+          ].join(" ")}
+          onClick={handleDropdownToggle}
+        >
+          <ChevronDownIcon
+            className={`${
+              _styles["lumin-auto-complete-dropdown-toggle-chevron"]
+            } ${
+              isDropdownVisible
+                ? _styles["lumin-auto-complete-dropdown-toggle-chevron-rotate"]
+                : ""
+            }`}
+          />
+        </button>
         {inputValue.length > 0 && (
           <button
             className={[
@@ -77,48 +128,40 @@ export default ({ ...props }) => {
             ].join(" ")}
             onClick={() => {
               setInputValue("");
-              setSuggested([]);
+              setSuggested(dataSet); // Reset to full dataset when cleared
             }}
           >
             &times;
           </button>
         )}
       </div>
-      {suggested.length > 0 && (
+      {isDropdownVisible && (
         <div
           className={[
             _styles["lumina-auto-complete-suggested-cntnr"],
-            "lumina-auto-complete-suggested-cntnr"
+            "lumina-auto-complete-dropdown"
           ].join(" ")}
         >
-          {dataSetType === "flat" &&
-            suggested.map((_item, i) => (
-              <div
-                key={i}
-                className={[
-                  _styles["lumina-auto-complete-suggested-row"],
-                  "lumina-auto-complete-suggested-row"
-                ].join(" ")}
-                onClick={() => props?.onChange(_item)}
-              >
-                {_item}
-              </div>
-            ))}
-          {dataSetType === "nested" &&
-            suggested.map((_item, i) => (
-              <div
-                key={i}
-                className={[
-                  _styles["lumina-auto-complete-suggested-row"],
-                  "lumina-auto-complete-suggested-row"
-                ].join(" ")}
-                onClick={() => props?.onChange(_item)}
-              >
-                {_item[props?.dataTargetKey]}
-              </div>
-            ))}
+          {suggested.map((item, i) => (
+            <div
+              key={i}
+              className={[
+                _styles["lumina-auto-complete-suggested-row"],
+                "lumina-auto-complete-dropdown-item"
+              ].join(" ")}
+              onClick={() => handleOptionClick(item)}
+            >
+              {renderItem
+                ? renderItem(item)
+                : dataSetType === "nested"
+                ? item[dataTargetKey]
+                : item}
+            </div>
+          ))}
         </div>
       )}
     </div>
   );
 };
+
+export default AutoComplete;

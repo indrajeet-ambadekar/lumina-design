@@ -38,7 +38,7 @@ import {
 import * as LuminaComponents from "lumina-design";
 import { LuminaIcon } from "lumina-design-icons";
 import { COUNTRIES } from "./constants";
-console.log(Object.keys(LuminaComponents));
+
 const floating_buttons = [
   {
     icon: <LuminaIcon name='home' size={20} />,
@@ -206,14 +206,16 @@ const App = () => {
         </pre>
         <AutoComplete
           dataSet={[...COUNTRIES]}
-          onChange={(value) => setFruitName(value.city)}
+          onChange={(value) => setFruitName(value?.city || "NULL VALUE")}
           value={fruitName}
           placeholder='Start typing here...'
           label='Enter fruit name'
           id='AutoComplete'
           className='AutoComplete'
           renderItem={(_item) => (
-            <div className='autocomplete-row'>{_item.name}</div>
+            <div className='autocomplete-row'>
+              {_item.city} ({_item.country})
+            </div>
           )}
           dataSetType='nested' // flat / nested
           dataTargetKey='city'
@@ -1065,11 +1067,16 @@ error--> true / false [boolean]
           onChange={(value) => setCity(value)}
           label='Select a city'
         >
-          <option value='Mumbai'>Mumbai</option>
+          {COUNTRIES.map((x, i) => (
+            <option key={i} value={x.city}>
+              {x.city}
+            </option>
+          ))}
+          {/* <option value='Mumbai'>Mumbai</option>
           <option value='NewDelhi'>New Delhi</option>
           <option value='Kolkata'>Kolkata</option>
           <option value='Chennai'>Chennai</option>
-          <option value='Bengaluru'>Bengaluru</option>
+          <option value='Bengaluru'>Bengaluru</option> */}
         </SelectDropDown>
       </section>
       <section className='showcase-item'>

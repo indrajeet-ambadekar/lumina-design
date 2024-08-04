@@ -29,8 +29,8 @@ $button-seconday: #f9f9f9;
 }
 @mixin vertical-center-left {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
 }
 @mixin vertical-center-right {
   display: flex;
@@ -2719,6 +2719,30 @@ a.lumina-link-disabled {
     outline: none;
     background-color: transparent;
   }
+}
+.lumina-auto-complete-dropdown-toggle {
+  background-color: transparent;
+  @include vertical-center();
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.9s ease;
+
+  svg {
+    width: 26px;
+    height: 26px;
+    path {
+      stroke: $lumina-orange;
+    }
+  }
+}
+.lumin-auto-complete-dropdown-toggle-chevron {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.lumin-auto-complete-dropdown-toggle-chevron-rotate {
+  transform: rotate(180deg);
 }
 
 .lumina-auto-complete-suggested-cntnr {
