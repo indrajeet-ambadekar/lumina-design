@@ -29,8 +29,8 @@ $button-seconday: #f9f9f9;
 }
 @mixin vertical-center-left {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
 }
 @mixin vertical-center-right {
   display: flex;
@@ -2720,6 +2720,30 @@ a.lumina-link-disabled {
     background-color: transparent;
   }
 }
+.lumina-auto-complete-dropdown-toggle {
+  background-color: transparent;
+  @include vertical-center();
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.9s ease;
+
+  svg {
+    width: 26px;
+    height: 26px;
+    path {
+      stroke: $lumina-orange;
+    }
+  }
+}
+.lumin-auto-complete-dropdown-toggle-chevron {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.lumin-auto-complete-dropdown-toggle-chevron-rotate {
+  transform: rotate(180deg);
+}
 
 .lumina-auto-complete-suggested-cntnr {
   position: absolute;
@@ -2817,4 +2841,76 @@ a.lumina-link-disabled {
   display: inline-flex;
   align-items: center;
   font-size: 20px;
+}
+
+// ######################## RESIZABLE PANEL COMPONENT STYLES ##############################
+
+.lumina-resizable-panel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.lumina-left-container,
+.lumina-right-container {
+  overflow: auto;
+  padding: 5px 15px;
+}
+
+.lumina-resize-handle {
+  cursor: col-resize;
+  background-color: #e0e0e0;
+  width: 10px;
+  height: 100%;
+}
+
+.lumina-resizable-panel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  user-select: none; /* Prevents text selection during drag */
+}
+
+.lumina-left-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.lumina-right-container {
+  overflow: auto;
+}
+
+.lumina-resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0; /* Adjust position to be at the edge */
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lumina-resize-handle svg {
+  pointer-events: none; /* Allows handle to be draggable without interference */
+  path {
+    stroke: $lumina-orange;
+  }
+}
+
+body.lumina-resizing {
+  cursor: col-resize !important; /* Change cursor globally when resizing */
+}
+
+.lumina-markdown-container {
+  line-height: 1.5;
+  white-space: pre-wrap;
+  background-color: $white;
+  padding: 1rem 10px;
 }

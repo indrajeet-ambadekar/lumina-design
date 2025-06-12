@@ -23,6 +23,7 @@ import {
   Progress,
   RadioButton,
   RangeSlider,
+  ResizablePanel,
   SelectDropDown,
   Tabs,
   TabCard,
@@ -36,7 +37,8 @@ import {
 } from "lumina-design";
 import * as LuminaComponents from "lumina-design";
 import { LuminaIcon } from "lumina-design-icons";
-console.log(Object.keys(LuminaComponents));
+import { COUNTRIES } from "./constants";
+
 const floating_buttons = [
   {
     icon: <LuminaIcon name='home' size={20} />,
@@ -203,25 +205,20 @@ const App = () => {
             `}
         </pre>
         <AutoComplete
-          dataSet={[
-            { id: 1, name: "apple" },
-            { id: 2, name: "orange" },
-            { id: 3, name: "banana" },
-            { id: 4, name: "pine apple" },
-            { id: 5, name: "custard apple" },
-            { id: 6, name: "watermelon" }
-          ]}
-          onChange={(value) => setFruitName(value.name)}
+          dataSet={[...COUNTRIES]}
+          onChange={(value) => setFruitName(value?.city || "NULL VALUE")}
           value={fruitName}
           placeholder='Start typing here...'
           label='Enter fruit name'
           id='AutoComplete'
           className='AutoComplete'
           renderItem={(_item) => (
-            <div className='autocomplete-row'>{_item.name}</div>
+            <div className='autocomplete-row'>
+              {_item.city} ({_item.country})
+            </div>
           )}
           dataSetType='nested' // flat / nested
-          dataTargetKey='name'
+          dataTargetKey='city'
         />
       </section>
       <section className='showcase-item'>
@@ -1070,11 +1067,16 @@ error--> true / false [boolean]
           onChange={(value) => setCity(value)}
           label='Select a city'
         >
-          <option value='Mumbai'>Mumbai</option>
+          {COUNTRIES.map((x, i) => (
+            <option key={i} value={x.city}>
+              {x.city}
+            </option>
+          ))}
+          {/* <option value='Mumbai'>Mumbai</option>
           <option value='NewDelhi'>New Delhi</option>
           <option value='Kolkata'>Kolkata</option>
           <option value='Chennai'>Chennai</option>
-          <option value='Bengaluru'>Bengaluru</option>
+          <option value='Bengaluru'>Bengaluru</option> */}
         </SelectDropDown>
       </section>
       <section className='showcase-item'>
@@ -1434,6 +1436,41 @@ toast.warn("MESSAGE",time_in_milliseconds)
         >
           <div>BottomToolTip</div>
         </Tooltip>
+      </section>
+      <section className='showcase-item'>
+        <ResizablePanel
+          initialWidth={window.innerWidth * 0.4}
+          leftContent={
+            <div className='code-block'>
+              <h1>
+                this is the left containerthis is the left containerthis is the
+                left containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left
+                containerthis is the left containerthis is the left container
+              </h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+            </div>
+          }
+          rightContent={
+            <div className='review-content'>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+              <h1>this is the left container</h1>
+            </div>
+          }
+        />
       </section>
 
       {/* <section className='showcase-item'>

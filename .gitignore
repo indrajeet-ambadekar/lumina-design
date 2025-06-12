@@ -10,6 +10,7 @@ example/package-lock.json
 build
 dist
 .rpt2_cache
+.yarn
 
 # misc
 .DS_Store

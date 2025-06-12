@@ -108,7 +108,6 @@ export default ({ ...props }) => {
           >
             {displayValue}
           </span>
-          
           <span
             className={[
               `${styles["lumina-dropdown-icon"]}`,

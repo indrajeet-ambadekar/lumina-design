@@ -21,6 +21,7 @@ import { MenuDropdown, MenuItem } from "./components/menudropdown";
 import Progress from "./components/progress";
 import RadioButton from "./components/radio";
 import RangeSlider from "./components/rangeslider";
+import ResizablePanel from "./components/dragresizeable";
 import SelectDropDown from "./components/select";
 import { Tabs, TabCard } from "./components/tabs";
 import TabSelect from "./components/tabselect";
@@ -64,6 +65,7 @@ export {
   Progress,
   RadioButton,
   RangeSlider,
+  ResizablePanel,
   SelectDropDown,
   Tabs,
   TabCard,
