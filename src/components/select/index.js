@@ -111,7 +111,8 @@ export default ({ ...props }) => {
           <span
             className={[
               `${styles["lumina-dropdown-icon"]}`,
-              `${isOpen ? styles["lumina-dropdown-icon-open"] : ""}`
+              `${isOpen ? styles["lumina-dropdown-icon-open"] : ""}`,
+              `lumina-dropdown-icon`
             ].join(" ")}
           >
             <ChevronDownIcon />
